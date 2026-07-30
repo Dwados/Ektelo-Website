@@ -88,14 +88,14 @@ export function ContactForm() {
     return (
       <div
         role="status"
-        className="flex h-full min-h-[420px] flex-col items-start justify-center rounded-lg border border-emerald/30 bg-emerald/[0.06] p-10"
+        className="flex h-full min-h-[420px] flex-col items-start justify-center rounded-lg border border-signal/30 bg-signal/[0.06] p-10"
       >
-        <CheckCircle2 className="h-10 w-10 text-emerald" aria-hidden="true" />
-        <h3 className="mt-5 font-display text-2xl font-semibold text-navy">Message prepared.</h3>
+        <CheckCircle2 className="h-10 w-10 text-signal" aria-hidden="true" />
+        <h3 className="mt-5 font-display text-2xl font-semibold text-ink-strong">Message prepared.</h3>
         <p className="mt-3 max-w-md leading-relaxed text-ink-soft">
           Your email client has opened with the details pre-filled — hit send and it lands with our
           engagement team. We respond within one business day. Prefer direct?{" "}
-          <a href={`mailto:${site.email}`} className="cursor-pointer font-semibold text-blue-600 hover:underline">
+          <a href={`mailto:${site.email}`} className="cursor-pointer font-semibold text-accent-ink hover:underline">
             {site.email}
           </a>
         </p>
@@ -104,15 +104,15 @@ export function ContactForm() {
   }
 
   const inputClass = (field: keyof FieldErrors) =>
-    `h-12 w-full rounded-md border bg-white px-4 text-[0.9375rem] text-ink transition-colors placeholder:text-ink-faint/70 focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/25 ${
-      errors[field] ? "border-red-500" : "border-line-light"
+    `h-12 w-full rounded-md border bg-canvas px-4 text-[0.9375rem] text-ink transition-colors placeholder:text-ink-faint/70 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 ${
+      errors[field] ? "border-red-500" : "border-hairline"
     }`;
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-navy">
+          <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-ink-strong">
             Full name <span className="text-red-500" aria-hidden="true">*</span>
           </label>
           <input
@@ -134,7 +134,7 @@ export function ContactForm() {
           )}
         </div>
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-navy">
+          <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-ink-strong">
             Work email <span className="text-red-500" aria-hidden="true">*</span>
           </label>
           <input
@@ -159,7 +159,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="organization" className="mb-1.5 block text-sm font-semibold text-navy">
+        <label htmlFor="organization" className="mb-1.5 block text-sm font-semibold text-ink-strong">
           Organization <span className="text-red-500" aria-hidden="true">*</span>
         </label>
         <input
@@ -182,7 +182,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="interest" className="mb-1.5 block text-sm font-semibold text-navy">
+        <label htmlFor="interest" className="mb-1.5 block text-sm font-semibold text-ink-strong">
           Area of interest
         </label>
         <select
@@ -190,7 +190,7 @@ export function ContactForm() {
           name="interest"
           value={interest}
           onChange={(e) => setInterest(e.target.value)}
-          className="h-12 w-full cursor-pointer rounded-md border border-line-light bg-white px-4 text-[0.9375rem] text-ink focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/25"
+          className="h-12 w-full cursor-pointer rounded-md border border-hairline bg-canvas px-4 text-[0.9375rem] text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25"
         >
           {interests.map((i) => (
             <option key={i}>{i}</option>
@@ -199,7 +199,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-navy">
+        <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-ink-strong">
           What should run better? <span className="text-red-500" aria-hidden="true">*</span>
         </label>
         <textarea
@@ -209,8 +209,8 @@ export function ContactForm() {
           required
           onBlur={onBlur}
           placeholder="Describe the operation, the pain, and what success would look like. Two sentences is enough to start."
-          className={`w-full rounded-md border bg-white px-4 py-3 text-[0.9375rem] leading-relaxed text-ink transition-colors placeholder:text-ink-faint/70 focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/25 ${
-            errors.message ? "border-red-500" : "border-line-light"
+          className={`w-full rounded-md border bg-canvas px-4 py-3 text-[0.9375rem] leading-relaxed text-ink transition-colors placeholder:text-ink-faint/70 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 ${
+            errors.message ? "border-red-500" : "border-hairline"
           }`}
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? "message-error" : "message-help"}
@@ -229,7 +229,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="group inline-flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-blue px-8 text-base font-semibold text-white transition-all duration-200 hover:bg-blue-600 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+        className="group inline-flex h-14 w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-accent px-8 text-base font-semibold text-white transition-all duration-200 hover:bg-accent-hover active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? (
           <>

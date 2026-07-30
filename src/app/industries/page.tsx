@@ -34,14 +34,14 @@ export default function IndustriesPage() {
               <Reveal key={ind.slug} delay={Math.min(i * 0.04, 0.2)}>
                 <article
                   id={ind.slug}
-                  className="group grid scroll-mt-28 gap-8 border border-line-light p-8 transition-colors duration-300 hover:border-blue/40 sm:p-10 lg:grid-cols-[1.1fr_1fr_1fr]"
+                  className="group grid scroll-mt-28 gap-8 border border-hairline p-8 transition-colors duration-300 hover:border-accent/40 sm:p-10 lg:grid-cols-[1.1fr_1fr_1fr]"
                 >
                   <div>
                     <div className="flex items-center gap-4">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-navy text-white transition-colors duration-300 group-hover:bg-blue">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-surface text-white transition-colors duration-300 group-hover:bg-accent">
                         <ind.icon className="h-5 w-5" aria-hidden="true" />
                       </div>
-                      <h3 className="font-display text-xl font-semibold text-navy sm:text-2xl">
+                      <h3 className="font-display text-xl font-semibold text-ink-strong sm:text-2xl">
                         {ind.title}
                       </h3>
                     </div>
@@ -62,12 +62,12 @@ export default function IndustriesPage() {
                     </ul>
                   </div>
 
-                  <div className="border-t border-line-light pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
-                    <p className="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-emerald-700">
+                  <div className="border-t border-hairline pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+                    <p className="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-signal-ink">
                       What we leave behind
                     </p>
                     <p className="mt-4 flex items-start gap-2.5 leading-relaxed text-ink">
-                      <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
+                      <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-signal-ink" aria-hidden="true" />
                       {ind.outcome}
                     </p>
                   </div>

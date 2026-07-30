@@ -17,20 +17,20 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden bg-navy pb-20 pt-40 text-white sm:pb-24">
+    <section className="relative overflow-hidden bg-surface pb-20 pt-40 text-white sm:pb-24">
       <div className="grid-lines-dark absolute inset-0" aria-hidden="true" />
       <div className="absolute inset-0 bg-hero-radial" aria-hidden="true" />
       <div
-        className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-blue/40 to-transparent"
+        className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent"
         aria-hidden="true"
       />
       <div className="wrap relative">
         <Reveal>
-          <p className="eyebrow text-emerald">{eyebrow}</p>
+          <p className="eyebrow text-signal">{eyebrow}</p>
           <h1 className="mt-5 max-w-4xl font-display text-display-lg font-semibold text-white">
             {title}
           </h1>
-          {lead && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">{lead}</p>}
+          {lead && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-on-dark">{lead}</p>}
         </Reveal>
         {children}
       </div>

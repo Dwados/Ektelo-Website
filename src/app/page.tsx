@@ -36,16 +36,16 @@ export default function HomePage() {
         <div className="wrap relative grid items-center gap-14 pb-20 pt-36 sm:pt-40 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-28 lg:pt-48">
           <div>
             <Reveal>
-              <p className="eyebrow text-emerald">Operational Transformation</p>
+              <p className="eyebrow text-signal">Operational Transformation</p>
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="mt-6 font-display text-display-xl font-semibold text-white">
                 We digitize operations,{" "}
-                <span className="text-slate-400">not just software.</span>
+                <span className="text-on-dark-soft">not just software.</span>
               </h1>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className="mt-7 max-w-xl text-lg leading-relaxed text-slate-300">
+              <p className="mt-7 max-w-xl text-lg leading-relaxed text-on-dark">
                 Ektelo finds the hidden inefficiencies inside governments, corporations, and
                 enterprises — then eliminates them with AI, automation, engineering, and process
                 redesign. The product is better operations, measured in numbers your board can read.
@@ -60,8 +60,8 @@ export default function HomePage() {
               </ButtonLink>
             </Reveal>
             <Reveal delay={0.3}>
-              <p className="mt-8 font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
-                Ektelo — <span className="text-emerald">“to execute”</span> · discovery to delivery,
+              <p className="mt-8 font-mono text-xs uppercase tracking-[0.2em] text-on-dark-faint">
+                Ektelo — <span className="text-signal">“to execute”</span> · discovery to delivery,
                 one accountable team
               </p>
             </Reveal>
@@ -72,7 +72,7 @@ export default function HomePage() {
         </div>
 
         {/* Stat bar */}
-        <div className="relative border-t border-white/[0.08] bg-navy-950/70 backdrop-blur-sm">
+        <div className="relative border-t border-white/[0.08] bg-surface-deep/70 backdrop-blur-sm">
           <div className="wrap grid grid-cols-2 gap-x-6 gap-y-10 py-12 lg:grid-cols-4">
             {heroStats.map((s, i) => (
               <Reveal key={s.label} delay={i * 0.06}>
@@ -83,7 +83,7 @@ export default function HomePage() {
         </div>
 
         {/* 2 · Trust strip — sectors served */}
-        <div className="relative overflow-hidden border-t border-white/[0.06] bg-navy-950 py-6">
+        <div className="relative overflow-hidden border-t border-white/[0.06] bg-surface-deep py-6">
           <p className="sr-only">Sectors we serve: {sectorsServed.join(", ")}</p>
           <div
             aria-hidden="true"
@@ -92,7 +92,7 @@ export default function HomePage() {
             {[...sectorsServed, ...sectorsServed].map((s, i) => (
               <span
                 key={`${s}-${i}`}
-                className="font-mono text-xs uppercase tracking-[0.3em] text-slate-500"
+                className="font-mono text-xs uppercase tracking-[0.3em] text-on-dark-faint"
               >
                 {s}
               </span>
@@ -108,7 +108,7 @@ export default function HomePage() {
             eyebrow="Our Mission"
             title={
               <>
-                Software is everywhere. <span className="text-blue-600">Execution isn’t.</span>
+                Software is everywhere. <span className="text-accent-ink">Execution isn’t.</span>
               </>
             }
           />
@@ -123,7 +123,7 @@ export default function HomePage() {
               We embed with your teams, measure how work really flows, and rebuild the operation —
               process, systems, and cadence — until the numbers move.
             </p>
-            <p className="border-l-2 border-emerald pl-5 font-medium text-navy">
+            <p className="border-l-2 border-signal pl-5 font-medium text-ink-strong">
               We transform how organizations work. Not how their brochures read.
             </p>
           </Reveal>
@@ -157,11 +157,11 @@ export default function HomePage() {
               },
             ].map((item, i) => (
               <Reveal key={item.n} delay={i * 0.08} className="group h-full">
-                <div className="flex h-full flex-col border border-line-light bg-white p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-                  <span className="font-mono text-xs tracking-[0.25em] text-blue-600">
+                <div className="flex h-full flex-col border border-hairline bg-canvas p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                  <span className="font-mono text-xs tracking-[0.25em] text-accent-ink">
                     PRINCIPLE {item.n}
                   </span>
-                  <h3 className="mt-4 font-display text-xl font-semibold text-navy">{item.title}</h3>
+                  <h3 className="mt-4 font-display text-xl font-semibold text-ink-strong">{item.title}</h3>
                   <p className="mt-3 leading-relaxed text-ink-soft">{item.body}</p>
                 </div>
               </Reveal>
@@ -191,17 +191,17 @@ export default function HomePage() {
               const groupServices = services.filter((s) => s.group === group.key);
               return (
                 <Reveal key={group.key} delay={gi * 0.07}>
-                  <div className="group h-full border border-line-light p-8 transition-colors duration-300 hover:border-blue/40">
+                  <div className="group h-full border border-hairline p-8 transition-colors duration-300 hover:border-accent/40">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs uppercase tracking-[0.25em] text-blue-600">
+                      <span className="font-mono text-xs uppercase tracking-[0.25em] text-accent-ink">
                         {String(gi + 1).padStart(2, "0")}
                       </span>
-                      <span className="h-px flex-1 mx-4 bg-line-light" aria-hidden="true" />
+                      <span className="h-px flex-1 mx-4 bg-hairline" aria-hidden="true" />
                       <span className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">
                         {groupServices.length} services
                       </span>
                     </div>
-                    <h3 className="mt-5 font-display text-2xl font-semibold text-navy">
+                    <h3 className="mt-5 font-display text-2xl font-semibold text-ink-strong">
                       {group.title}
                     </h3>
                     <p className="mt-2.5 leading-relaxed text-ink-soft">{group.description}</p>
@@ -210,9 +210,9 @@ export default function HomePage() {
                         <li key={s.slug}>
                           <Link
                             href={`/services#${s.slug}`}
-                            className="group/link flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 -mx-3 text-[0.9375rem] font-medium text-ink transition-colors hover:bg-mist hover:text-navy"
+                            className="group/link flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 -mx-3 text-[0.9375rem] font-medium text-ink transition-colors hover:bg-canvas-alt hover:text-ink-strong"
                           >
-                            <s.icon className="h-4 w-4 shrink-0 text-blue-500" aria-hidden="true" />
+                            <s.icon className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
                             {s.title}
                             <ArrowUpRight
                               className="ml-auto h-3.5 w-3.5 text-ink-faint opacity-0 transition-opacity group-hover/link:opacity-100"
@@ -250,16 +250,16 @@ export default function HomePage() {
               <Reveal key={ind.slug} delay={i * 0.06} className="h-full">
                 <Link
                   href={`/industries#${ind.slug}`}
-                  className="group flex h-full cursor-pointer flex-col border border-line-light bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-blue/40 hover:shadow-card-hover"
+                  className="group flex h-full cursor-pointer flex-col border border-hairline bg-canvas p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-card-hover"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-md bg-navy text-white transition-colors duration-300 group-hover:bg-blue">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-md bg-surface text-white transition-colors duration-300 group-hover:bg-accent">
                     <ind.icon className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-navy">{ind.title}</h3>
+                  <h3 className="mt-5 font-display text-lg font-semibold text-ink-strong">{ind.title}</h3>
                   <p className="mt-2 flex-1 text-[0.9375rem] leading-relaxed text-ink-soft">
                     {ind.summary}
                   </p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600">
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
                     Explore
                     <ArrowRight
                       className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
@@ -290,10 +290,10 @@ export default function HomePage() {
             {whyEktelo.map((f, i) => (
               <Reveal key={f.title} delay={i * 0.07}>
                 <div className="group">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-md border border-line-light bg-mist text-navy transition-colors duration-300 group-hover:border-blue/40 group-hover:bg-blue group-hover:text-white">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-md border border-hairline bg-canvas-alt text-ink-strong transition-colors duration-300 group-hover:border-accent/40 group-hover:bg-accent group-hover:text-white">
                     <f.icon className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-4 font-display text-lg font-semibold text-navy">{f.title}</h3>
+                  <h3 className="mt-4 font-display text-lg font-semibold text-ink-strong">{f.title}</h3>
                   <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-soft">
                     {f.description}
                   </p>
@@ -319,7 +319,7 @@ export default function HomePage() {
       </Section>
 
       {/* ───────────── 9 · Technology capabilities ───────────── */}
-      <Section tone="navy" className="border-t border-white/[0.07] bg-navy-950 py-24 sm:py-32">
+      <Section tone="navy" className="border-t border-white/[0.07] bg-surface-deep py-24 sm:py-32">
         <div className="wrap">
           <SectionHeading
             tone="dark"
@@ -330,14 +330,14 @@ export default function HomePage() {
           <div className="mt-14 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((cap, i) => (
               <Reveal key={cap.title} delay={i * 0.04} className="h-full">
-                <div className="group h-full bg-navy-950 p-7 transition-colors duration-300 hover:bg-navy-900">
-                  <span className="font-mono text-[0.6875rem] tracking-[0.25em] text-emerald">
+                <div className="group h-full bg-surface-deep p-7 transition-colors duration-300 hover:bg-surface">
+                  <span className="font-mono text-[0.6875rem] tracking-[0.25em] text-signal">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-3 font-display text-base font-semibold text-white">
                     {cap.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-400">{cap.note}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-on-dark-soft">{cap.note}</p>
                 </div>
               </Reveal>
             ))}
@@ -355,18 +355,18 @@ export default function HomePage() {
           <Reveal delay={0.1} className="mt-12">
             <Link
               href="/case-studies"
-              className="group block cursor-pointer border border-line-light shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+              className="group block cursor-pointer border border-hairline shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
             >
               <div className="grid lg:grid-cols-[1.2fr_1fr]">
                 <div className="p-8 sm:p-12">
-                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-blue-600">
+                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent-ink">
                     {featured.sector} · {featured.client}
                   </p>
-                  <h3 className="mt-4 font-display text-display-sm font-semibold text-navy">
+                  <h3 className="mt-4 font-display text-display-sm font-semibold text-ink-strong">
                     {featured.title}
                   </h3>
                   <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">{featured.challenge}</p>
-                  <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600">
+                  <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
                     Read the full case study
                     <ArrowRight
                       className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
@@ -374,10 +374,10 @@ export default function HomePage() {
                     />
                   </span>
                 </div>
-                <div className="grid content-center gap-8 border-t border-line-light bg-mist p-8 sm:p-12 lg:border-l lg:border-t-0">
+                <div className="grid content-center gap-8 border-t border-hairline bg-canvas-alt p-8 sm:p-12 lg:border-l lg:border-t-0">
                   {featured.results.map((r) => (
                     <div key={r.label}>
-                      <p className="font-display text-3xl font-semibold tabular-nums text-navy">
+                      <p className="font-display text-3xl font-semibold tabular-nums text-ink-strong">
                         {r.value}
                       </p>
                       <p className="mt-1 text-sm text-ink-faint">{r.label}</p>
@@ -396,11 +396,11 @@ export default function HomePage() {
         <div className="grid-lines-dark absolute inset-0 opacity-60" aria-hidden="true" />
         <div className="wrap relative text-center">
           <Reveal>
-            <p className="eyebrow justify-center text-emerald">Engage Ektelo</p>
+            <p className="eyebrow justify-center text-signal">Engage Ektelo</p>
             <h2 className="mx-auto mt-6 max-w-3xl font-display text-display-lg font-semibold text-white">
               Somewhere in your organization, a process is quietly costing you millions.
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-on-dark">
               A two-week diagnostic will find it — and put a number on it. No obligation beyond the
               conversation.
             </p>

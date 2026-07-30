@@ -24,7 +24,7 @@ export default function ServicesPage() {
             <a
               key={g.key}
               href={`#group-${g.key.toLowerCase()}`}
-              className="cursor-pointer rounded-full border border-white/15 px-5 py-2 font-mono text-xs uppercase tracking-[0.18em] text-slate-300 transition-colors hover:border-emerald/60 hover:text-white"
+              className="cursor-pointer rounded-full border border-white/15 px-5 py-2 font-mono text-xs uppercase tracking-[0.18em] text-on-dark transition-colors hover:border-signal/60 hover:text-white"
             >
               {String(i + 1).padStart(2, "0")} · {g.title}
             </a>
@@ -58,19 +58,19 @@ export default function ServicesPage() {
                   >
                     <article
                       id={s.slug}
-                      className={`group h-full scroll-mt-28 border border-line-light p-8 transition-all duration-300 hover:-translate-y-1 hover:border-blue/40 hover:shadow-card-hover ${
-                        mist ? "bg-white shadow-card" : "bg-white"
+                      className={`group h-full scroll-mt-28 border border-hairline p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-card-hover ${
+                        mist ? "bg-canvas shadow-card" : "bg-canvas"
                       }`}
                     >
                       <div className="flex items-start justify-between gap-4">
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-navy text-white transition-colors duration-300 group-hover:bg-blue">
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-surface text-white transition-colors duration-300 group-hover:bg-accent">
                           <s.icon className="h-5 w-5" aria-hidden="true" />
                         </div>
                         <span className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-ink-faint">
                           {group.key}
                         </span>
                       </div>
-                      <h3 className="mt-5 font-display text-xl font-semibold text-navy">
+                      <h3 className="mt-5 font-display text-xl font-semibold text-ink-strong">
                         {s.title}
                       </h3>
                       <p className="mt-2 font-medium leading-relaxed text-ink">{s.summary}</p>
@@ -94,7 +94,7 @@ export default function ServicesPage() {
             <h2 className="max-w-2xl font-display text-display-md font-semibold text-white">
               Not sure which service you need? That’s what the diagnostic is for.
             </h2>
-            <p className="mt-4 max-w-xl text-slate-300">
+            <p className="mt-4 max-w-xl text-on-dark">
               Two to four weeks, evidence-based, and it pays for itself in what it finds.
             </p>
           </Reveal>

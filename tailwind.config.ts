@@ -1,49 +1,54 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * Colours resolve to CSS custom properties emitted by src/theme/palettes.ts, so
+ * the whole site re-skins by swapping the active palette. The channel form
+ * (`R G B`) is what lets Tailwind's opacity modifiers (bg-accent/40) keep working.
+ */
+const c = (name: string) => `rgb(var(${name}) / <alpha-value>)`;
+
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        // Brand — Ektelo
-        navy: {
-          DEFAULT: "#081A2B", // primary deep navy
-          950: "#040E18",
-          900: "#081A2B",
-          800: "#0C2438",
-          700: "#123049",
-          600: "#1A3D5C",
+        // Dark surfaces
+        surface: {
+          DEFAULT: c("--c-base"),
+          deep: c("--c-deepest"),
+          raised: c("--c-raised"),
         },
-        blue: {
-          DEFAULT: "#2D7FF9", // electric blue
-          50: "#EBF3FF",
-          100: "#D7E7FE",
-          200: "#B0CFFD",
-          300: "#84B3FB",
-          400: "#5799FA",
-          500: "#2D7FF9",
-          600: "#1663D9", // accessible on white for text
-          700: "#124EAC",
-          800: "#0F3D85",
-          900: "#0C2F66",
+        // Text on dark surfaces
+        "on-dark": {
+          DEFAULT: c("--c-on-dark"),
+          strong: c("--c-on-dark-strong"),
+          soft: c("--c-on-dark-soft"),
+          faint: c("--c-on-dark-faint"),
         },
-        emerald: {
-          DEFAULT: "#00C48C", // accent
-          300: "#5CE3BC",
-          400: "#26D3A2",
-          500: "#00C48C",
-          600: "#00A375",
-          700: "#0A8060", // accessible on white for text
+        // Primary accent — actions, links, flow
+        accent: {
+          DEFAULT: c("--c-accent"),
+          hover: c("--c-accent-hover"),
+          soft: c("--c-accent-soft"),
+          ink: c("--c-accent-ink"), // accessible as text on canvas
         },
+        // Secondary accent — verified gain, eyebrow labels on dark
+        signal: {
+          DEFAULT: c("--c-signal"),
+          ink: c("--c-signal-ink"), // accessible as text on canvas
+        },
+        // Light surfaces
+        canvas: {
+          DEFAULT: c("--c-canvas"),
+          alt: c("--c-canvas-alt"),
+        },
+        hairline: c("--c-hairline"),
+        // Text on light surfaces
         ink: {
-          DEFAULT: "#1E293B", // charcoal body text
-          soft: "#475569",
-          faint: "#64748B",
-        },
-        mist: "#F4F6F9", // light gray section background
-        line: {
-          light: "#E4E9F0", // hairline on light
-          dark: "rgba(255,255,255,0.08)", // hairline on dark
+          DEFAULT: c("--c-ink"),
+          strong: c("--c-ink-strong"),
+          soft: c("--c-ink-soft"),
+          faint: c("--c-ink-faint"),
         },
       },
       fontFamily: {
@@ -58,18 +63,18 @@ const config: Config = {
         "display-sm": ["clamp(1.35rem, 2vw, 1.75rem)", { lineHeight: "1.25", letterSpacing: "-0.01em" }],
       },
       maxWidth: {
-        wrap: "76rem", // 1216px content wrapper
+        wrap: "76rem",
       },
       boxShadow: {
-        card: "0 1px 2px rgba(8, 26, 43, 0.05), 0 8px 24px -12px rgba(8, 26, 43, 0.12)",
-        "card-hover": "0 2px 4px rgba(8, 26, 43, 0.06), 0 16px 40px -12px rgba(8, 26, 43, 0.18)",
-        glow: "0 0 60px -12px rgba(45, 127, 249, 0.45)",
+        card: "0 1px 2px rgb(var(--c-base) / 0.05), 0 8px 24px -12px rgb(var(--c-base) / 0.12)",
+        "card-hover": "0 2px 4px rgb(var(--c-base) / 0.06), 0 16px 40px -12px rgb(var(--c-base) / 0.18)",
+        accent: "0 1px 0 rgb(255 255 255 / 0.15) inset, 0 8px 24px -8px rgb(var(--c-accent) / 0.5)",
       },
       backgroundImage: {
         "hero-radial":
-          "radial-gradient(80% 60% at 70% 20%, rgba(45,127,249,0.16) 0%, rgba(45,127,249,0.04) 45%, transparent 70%)",
+          "radial-gradient(80% 60% at 70% 20%, rgb(var(--c-accent) / 0.16) 0%, rgb(var(--c-accent) / 0.04) 45%, transparent 70%)",
         "cta-radial":
-          "radial-gradient(70% 80% at 50% 100%, rgba(45,127,249,0.22) 0%, rgba(0,196,140,0.06) 55%, transparent 80%)",
+          "radial-gradient(70% 80% at 50% 100%, rgb(var(--c-accent) / 0.22) 0%, rgb(var(--c-signal) / 0.06) 55%, transparent 80%)",
       },
       animation: {
         marquee: "marquee 40s linear infinite",

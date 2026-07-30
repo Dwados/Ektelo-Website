@@ -3,7 +3,10 @@ import { IBM_Plex_Mono, Inter, Space_Grotesk } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/lib/data";
+import { resolveTheme, themeVars } from "@/theme/palettes";
 import "./globals.css";
+
+const palette = resolveTheme(process.env.EKTELO_THEME);
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -60,7 +63,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#081A2B",
+  themeColor: palette.colors.base,
 };
 
 const orgJsonLd = {
@@ -84,11 +87,18 @@ const orgJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+    <html
+      lang="en"
+      data-theme={palette.key}
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+    >
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: `:root{${themeVars(palette)}}` }} />
+      </head>
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-blue focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
         >
           Skip to main content
         </a>

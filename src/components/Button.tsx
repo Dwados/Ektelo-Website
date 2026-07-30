@@ -21,12 +21,12 @@ const sizes = {
 
 const variants = {
   primary:
-    "bg-blue text-white hover:bg-blue-600 active:scale-[0.98] shadow-[0_1px_0_rgba(255,255,255,0.15)_inset,0_8px_24px_-8px_rgba(45,127,249,0.5)]",
+    "bg-accent text-white hover:bg-accent-hover active:scale-[0.98] shadow-accent",
   "outline-dark":
     "border border-white/20 text-white hover:border-white/50 hover:bg-white/5 active:scale-[0.98]",
   "outline-light":
-    "border border-navy/20 text-navy hover:border-navy/60 hover:bg-navy/[0.03] active:scale-[0.98]",
-  ghost: "text-blue-600 hover:text-blue-700",
+    "border border-ink-strong/20 text-ink-strong hover:border-ink-strong/60 hover:bg-ink-strong/[0.03] active:scale-[0.98]",
+  ghost: "text-accent-ink hover:text-accent-hover",
 };
 
 export function ButtonLink({
@@ -66,7 +66,7 @@ export function TextLink({
     <Link
       href={href}
       className={`group inline-flex cursor-pointer items-center gap-1.5 text-sm font-semibold transition-colors ${
-        tone === "dark" ? "text-blue-300 hover:text-white" : "text-blue-600 hover:text-navy"
+        tone === "dark" ? "text-accent-soft hover:text-white" : "text-accent-ink hover:text-ink-strong"
       } ${className}`}
     >
       {children}

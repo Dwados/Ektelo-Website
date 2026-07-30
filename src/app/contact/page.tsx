@@ -53,11 +53,11 @@ export default function ContactPage() {
               <ul className="mt-6 space-y-6">
                 {expectations.map((e) => (
                   <li key={e.title} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-navy text-white">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-surface text-white">
                       <e.icon className="h-[18px] w-[18px]" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-navy">{e.title}</h3>
+                      <h3 className="font-semibold text-ink-strong">{e.title}</h3>
                       <p className="mt-1 text-[0.9375rem] leading-relaxed text-ink-soft">{e.body}</p>
                     </div>
                   </li>
@@ -66,28 +66,28 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal delay={0.18}>
-              <div className="border border-line-light bg-mist p-7">
+              <div className="border border-hairline bg-canvas-alt p-7">
                 <h2 className="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-ink-faint">
                   Direct lines
                 </h2>
                 <ul className="mt-5 space-y-4 text-[0.9375rem]">
                   <li className="flex items-center gap-3">
-                    <Mail className="h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
-                    <a href={`mailto:${site.email}`} className="cursor-pointer font-medium text-navy hover:text-blue-600">
+                    <Mail className="h-4 w-4 shrink-0 text-accent-ink" aria-hidden="true" />
+                    <a href={`mailto:${site.email}`} className="cursor-pointer font-medium text-ink-strong hover:text-accent-ink">
                       {site.email}
                     </a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Phone className="h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
+                    <Phone className="h-4 w-4 shrink-0 text-accent-ink" aria-hidden="true" />
                     <a
                       href={`tel:${site.phone.replace(/\s/g, "")}`}
-                      className="cursor-pointer font-medium text-navy hover:text-blue-600"
+                      className="cursor-pointer font-medium text-ink-strong hover:text-accent-ink"
                     >
                       {site.phone}
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-ink" aria-hidden="true" />
                     <span className="text-ink-soft">{site.address}</span>
                   </li>
                 </ul>
@@ -95,7 +95,7 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal delay={0.24}>
-              <blockquote className="border-l-2 border-emerald pl-5">
+              <blockquote className="border-l-2 border-signal pl-5">
                 <p className="leading-relaxed text-ink-soft">
                   “The best time to fix an operation was before it started leaking. The second-best
                   time is this quarter.”

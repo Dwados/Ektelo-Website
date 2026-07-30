@@ -43,14 +43,14 @@ export function Stat({ value, prefix = "", suffix = "", decimals = 0, label, ton
     <div ref={ref}>
       <p
         className={`font-display text-3xl font-semibold tabular-nums tracking-tight sm:text-4xl ${
-          dark ? "text-white" : "text-navy"
+          dark ? "text-white" : "text-ink-strong"
         }`}
       >
         {prefix}
         {display.toFixed(decimals)}
-        <span className="text-emerald">{suffix}</span>
+        <span className="text-signal">{suffix}</span>
       </p>
-      <p className={`mt-2 text-sm ${dark ? "text-slate-400" : "text-ink-faint"}`}>{label}</p>
+      <p className={`mt-2 text-sm ${dark ? "text-on-dark-soft" : "text-ink-faint"}`}>{label}</p>
     </div>
   );
 }

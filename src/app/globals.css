@@ -13,16 +13,16 @@
   }
 
   body {
-    @apply bg-white font-sans text-ink antialiased;
+    @apply bg-canvas font-sans text-ink antialiased;
   }
 
   ::selection {
-    background: rgba(45, 127, 249, 0.25);
+    background: rgb(var(--c-accent) / 0.25);
   }
 
   /* Accessible focus — visible ring everywhere, keyboard-first */
   :focus-visible {
-    outline: 2px solid #2d7ff9;
+    outline: 2px solid rgb(var(--c-accent));
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -55,23 +55,15 @@
     @apply inline-block h-[7px] w-[7px] bg-current;
   }
 
-  /* Hairline dividers that adapt to section tone */
-  .rule-light {
-    @apply border-line-light;
-  }
-  .rule-dark {
-    border-color: rgba(255, 255, 255, 0.08);
-  }
-
-  /* Blueprint grid backdrop for dark sections */
+  /* Blueprint grid backdrop */
   .grid-lines-dark {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-image: linear-gradient(var(--c-grid-dark) 1px, transparent 1px),
+      linear-gradient(90deg, var(--c-grid-dark) 1px, transparent 1px);
     background-size: 56px 56px;
   }
   .grid-lines-light {
-    background-image: linear-gradient(rgba(8, 26, 43, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(8, 26, 43, 0.045) 1px, transparent 1px);
+    background-image: linear-gradient(var(--c-grid-light) 1px, transparent 1px),
+      linear-gradient(90deg, var(--c-grid-light) 1px, transparent 1px);
     background-size: 56px 56px;
   }
 }

@@ -66,7 +66,7 @@ export default function AboutPage() {
         eyebrow="About Ektelo"
         title={
           <>
-            Ektelo means <span className="text-emerald">“to execute.”</span> We named the company
+            Ektelo means <span className="text-signal">“to execute.”</span> We named the company
             after the thing most organizations are missing.
           </>
         }
@@ -102,7 +102,7 @@ export default function AboutPage() {
           </Reveal>
         </div>
 
-        <div className="wrap mt-20 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-line-light pt-14 lg:grid-cols-4">
+        <div className="wrap mt-20 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-hairline pt-14 lg:grid-cols-4">
           {heroStats.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06}>
               <Stat {...s} tone="light" />
@@ -122,11 +122,11 @@ export default function AboutPage() {
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.07} className="h-full">
-                <div className="h-full border border-line-light bg-white p-8 shadow-card">
-                  <span className="font-mono text-xs tracking-[0.25em] text-blue-600">
+                <div className="h-full border border-hairline bg-canvas p-8 shadow-card">
+                  <span className="font-mono text-xs tracking-[0.25em] text-accent-ink">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-4 font-display text-xl font-semibold text-navy">{v.title}</h3>
+                  <h3 className="mt-4 font-display text-xl font-semibold text-ink-strong">{v.title}</h3>
                   <p className="mt-3 leading-relaxed text-ink-soft">{v.body}</p>
                 </div>
               </Reveal>
@@ -146,14 +146,14 @@ export default function AboutPage() {
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {models.map((m, i) => (
               <Reveal key={m.title} delay={i * 0.07} className="h-full">
-                <div className="group flex h-full gap-6 border border-line-light p-8 transition-colors duration-300 hover:border-blue/40">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-navy text-white transition-colors duration-300 group-hover:bg-blue">
+                <div className="group flex h-full gap-6 border border-hairline p-8 transition-colors duration-300 hover:border-accent/40">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-surface text-white transition-colors duration-300 group-hover:bg-accent">
                     <m.icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
                     <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                      <h3 className="font-display text-xl font-semibold text-navy">{m.title}</h3>
-                      <span className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-700">
+                      <h3 className="font-display text-xl font-semibold text-ink-strong">{m.title}</h3>
+                      <span className="font-mono text-xs uppercase tracking-[0.2em] text-signal-ink">
                         {m.duration}
                       </span>
                     </div>

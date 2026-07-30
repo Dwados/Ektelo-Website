@@ -34,7 +34,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled || open
-          ? "border-b border-white/10 bg-navy/90 backdrop-blur-md"
+          ? "border-b border-white/10 bg-surface/90 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -53,12 +53,12 @@ export function Header() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={`relative cursor-pointer text-[0.9375rem] font-medium transition-colors duration-200 ${
-                  active ? "text-white" : "text-slate-300 hover:text-white"
+                  active ? "text-white" : "text-on-dark hover:text-white"
                 }`}
               >
                 {item.label}
                 {active && (
-                  <span className="absolute -bottom-2 left-0 right-0 h-px bg-emerald" aria-hidden="true" />
+                  <span className="absolute -bottom-2 left-0 right-0 h-px bg-signal" aria-hidden="true" />
                 )}
               </Link>
             );
@@ -68,7 +68,7 @@ export function Header() {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="group inline-flex h-10 cursor-pointer items-center gap-2 rounded-md bg-blue px-5 text-sm font-semibold text-white transition-all duration-200 hover:bg-blue-600 active:scale-[0.98]"
+            className="group inline-flex h-10 cursor-pointer items-center gap-2 rounded-md bg-accent px-5 text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-hover active:scale-[0.98]"
           >
             Start a conversation
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
@@ -98,7 +98,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={reduce ? undefined : { opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="overflow-hidden border-t border-white/10 bg-navy lg:hidden"
+            className="overflow-hidden border-t border-white/10 bg-surface lg:hidden"
           >
             <div className="wrap flex flex-col gap-1 py-4">
               {nav.map((item, i) => (
@@ -112,7 +112,7 @@ export function Header() {
                     href={item.href}
                     aria-current={pathname === item.href ? "page" : undefined}
                     className={`block cursor-pointer rounded-md px-3 py-3 text-lg font-medium ${
-                      pathname === item.href ? "bg-white/5 text-white" : "text-slate-300 hover:bg-white/5 hover:text-white"
+                      pathname === item.href ? "bg-white/5 text-white" : "text-on-dark hover:bg-white/5 hover:text-white"
                     }`}
                   >
                     {item.label}
@@ -121,7 +121,7 @@ export function Header() {
               ))}
               <Link
                 href="/contact"
-                className="mt-3 inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-md bg-blue px-5 text-base font-semibold text-white"
+                className="mt-3 inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-md bg-accent px-5 text-base font-semibold text-white"
               >
                 Start a conversation
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

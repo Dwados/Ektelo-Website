@@ -26,13 +26,13 @@ export default function CaseStudiesPage() {
             <Reveal key={cs.slug} delay={Math.min(i * 0.05, 0.2)}>
               <article
                 id={cs.slug}
-                className="group grid scroll-mt-28 overflow-hidden border border-line-light shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover lg:grid-cols-[1.25fr_1fr]"
+                className="group grid scroll-mt-28 overflow-hidden border border-hairline shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover lg:grid-cols-[1.25fr_1fr]"
               >
                 <div className="p-8 sm:p-12">
-                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-blue-600">
+                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent-ink">
                     {cs.sector} · {cs.client}
                   </p>
-                  <h2 className="mt-4 font-display text-display-sm font-semibold text-navy">
+                  <h2 className="mt-4 font-display text-display-sm font-semibold text-ink-strong">
                     {cs.title}
                   </h2>
 
@@ -55,7 +55,7 @@ export default function CaseStudiesPage() {
                     {cs.services.map((s) => (
                       <li
                         key={s}
-                        className="rounded-full border border-line-light bg-mist px-4 py-1.5 text-xs font-medium text-ink-soft"
+                        className="rounded-full border border-hairline bg-canvas-alt px-4 py-1.5 text-xs font-medium text-ink-soft"
                       >
                         {s}
                       </li>
@@ -63,8 +63,8 @@ export default function CaseStudiesPage() {
                   </ul>
                 </div>
 
-                <div className="grid content-center gap-9 border-t border-line-light bg-navy p-8 sm:p-12 lg:border-l lg:border-t-0">
-                  <p className="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-emerald">
+                <div className="grid content-center gap-9 border-t border-hairline bg-surface p-8 sm:p-12 lg:border-l lg:border-t-0">
+                  <p className="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-signal">
                     Verified outcomes
                   </p>
                   {cs.results.map((r) => (
@@ -72,7 +72,7 @@ export default function CaseStudiesPage() {
                       <p className="font-display text-3xl font-semibold tabular-nums text-white">
                         {r.value}
                       </p>
-                      <p className="mt-1.5 text-sm text-slate-400">{r.label}</p>
+                      <p className="mt-1.5 text-sm text-on-dark-soft">{r.label}</p>
                     </div>
                   ))}
                 </div>
@@ -90,7 +90,7 @@ export default function CaseStudiesPage() {
             <h2 className="max-w-2xl font-display text-display-md font-semibold text-white">
               Your operation could be the next one on this page.
             </h2>
-            <p className="mt-4 max-w-xl text-slate-300">
+            <p className="mt-4 max-w-xl text-on-dark">
               Every engagement above began with a two-week diagnostic. Start yours.
             </p>
           </Reveal>
