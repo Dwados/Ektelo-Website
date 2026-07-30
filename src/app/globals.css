@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-h: 4.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    background: rgba(45, 127, 249, 0.25);
+  }
+
+  /* Accessible focus — visible ring everywhere, keyboard-first */
+  :focus-visible {
+    outline: 2px solid #2d7ff9;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-wrap px-5 sm:px-8 lg:px-12;
+  }
+
+  /* Mono eyebrow label — the Ektelo section marker */
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 font-mono text-[0.6875rem] font-medium uppercase tracking-[0.22em];
+  }
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-[7px] w-[7px] bg-current;
+  }
+
+  /* Hairline dividers that adapt to section tone */
+  .rule-light {
+    @apply border-line-light;
+  }
+  .rule-dark {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Blueprint grid backdrop for dark sections */
+  .grid-lines-dark {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .grid-lines-light {
+    background-image: linear-gradient(rgba(8, 26, 43, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(8, 26, 43, 0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}

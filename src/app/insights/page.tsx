@@ -1,0 +1,112 @@
+import type { Metadata } from "next";
+import { ArrowUpRight } from "lucide-react";
+import { ButtonLink } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
+import { Reveal } from "@/components/Reveal";
+import { Section } from "@/components/Section";
+import { insights, site } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "Insights",
+  description:
+    "Field notes on operational transformation, AI in operations, process engineering, and government modernization — written by the people doing the work.",
+};
+
+function formatDate(iso: string) {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
+export default function InsightsPage() {
+  const [lead, ...rest] = insights;
+
+  return (
+    <>
+      <PageHero
+        eyebrow="Insights"
+        title="Field notes from the transformation floor"
+        lead="No thought-leadership theater. These are the patterns, numbers, and hard lessons from real operational work — published when we learn something worth your time."
+      />
+
+      <Section tone="white" className="py-20 sm:py-28">
+        <div className="wrap">
+          {/* Featured essay */}
+          <Reveal>
+            <article className="group grid overflow-hidden border border-line-light shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover lg:grid-cols-2">
+              <div className="relative hidden min-h-[280px] overflow-hidden bg-navy lg:block">
+                <div className="grid-lines-dark absolute inset-0" aria-hidden="true" />
+                <div className="absolute inset-0 bg-hero-radial" aria-hidden="true" />
+                <p className="absolute bottom-8 left-8 right-8 font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-emerald">
+                  Featured essay
+                </p>
+              </div>
+              <div className="p-8 sm:p-12">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">
+                  <span className="text-blue-600">{lead.category}</span>
+                  <span aria-hidden="true">·</span>
+                  <time dateTime={lead.date}>{formatDate(lead.date)}</time>
+                  <span aria-hidden="true">·</span>
+                  <span>{lead.readTime} read</span>
+                </div>
+                <h2 className="mt-5 font-display text-display-sm font-semibold text-navy">
+                  {lead.title}
+                </h2>
+                <p className="mt-4 text-lg leading-relaxed text-ink-soft">{lead.excerpt}</p>
+                <p className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600">
+                  Full essay available on request
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </p>
+              </div>
+            </article>
+          </Reveal>
+
+          {/* Grid */}
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {rest.map((post, i) => (
+              <Reveal key={post.slug} delay={Math.min(i * 0.06, 0.25)} className="h-full">
+                <article className="group flex h-full flex-col border border-line-light bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-blue/40 hover:shadow-card-hover">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-ink-faint">
+                    <span className="text-blue-600">{post.category}</span>
+                    <span aria-hidden="true">·</span>
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
+                  </div>
+                  <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-navy">
+                    {post.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-[0.9375rem] leading-relaxed text-ink-soft">
+                    {post.excerpt}
+                  </p>
+                  <p className="mt-5 font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-ink-faint">
+                    {post.readTime} read
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Subscribe strip */}
+          <Reveal className="mt-16">
+            <div className="flex flex-col items-start justify-between gap-6 border border-line-light bg-mist p-8 sm:p-10 lg:flex-row lg:items-center">
+              <div>
+                <h2 className="font-display text-xl font-semibold text-navy">
+                  The Operations Brief
+                </h2>
+                <p className="mt-2 max-w-xl text-ink-soft">
+                  One email a month: a measurable idea you can apply to your operation the same week.
+                  Request it and we'll add you personally — no automation theater.
+                </p>
+              </div>
+              <ButtonLink href={`mailto:${site.email}?subject=Subscribe%20me%20to%20The%20Operations%20Brief`}>
+                Request the brief
+              </ButtonLink>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+    </>
+  );
+}
