@@ -10,7 +10,7 @@ import { heroStats } from "@/lib/data";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Ektelo means “to execute.” We are an operational transformation company: operators, engineers, and analysts who rebuild how governments and enterprises work.",
+    "Ektelio comes from the Greek ektelo — “to execute.” We are an operational transformation company: operators, engineers, and analysts who rebuild how governments and enterprises work.",
 };
 
 const values = [
@@ -49,7 +49,7 @@ const models = [
     icon: Users,
     title: "Embedded operations team",
     duration: "Ongoing",
-    body: "Ektelo operators and engineers inside your organization, running the improvement backlog quarter after quarter as gains compound.",
+    body: "Ektelio operators and engineers inside your organization, running the improvement backlog quarter after quarter as gains compound.",
   },
   {
     icon: Handshake,
@@ -63,11 +63,12 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Ektelo"
+        eyebrow="About Ektelio"
         title={
           <>
-            Ektelo means <span className="text-signal">“to execute.”</span> We named the company
-            after the thing most organizations are missing.
+            Ektelio comes from the Greek{" "}
+            <span className="text-signal">ektelo — “to execute.”</span> We named the company after
+            the thing most organizations are missing.
           </>
         }
         lead="We are an operational transformation company — operators, engineers, and analysts who rebuild how governments, corporations, and enterprises actually work."
@@ -82,7 +83,7 @@ export default function AboutPage() {
           />
           <Reveal delay={0.1} className="space-y-6 text-lg leading-relaxed text-ink-soft lg:pt-14">
             <p>
-              Ektelo was founded on a pattern we kept seeing inside large organizations: brilliant
+              Ektelio was founded on a pattern we kept seeing inside large organizations: brilliant
               strategies, expensive systems — and operations that still ran on paper, email, and
               heroic improvisation. The consultants left decks. The vendors left licenses. Nobody
               left behind a better operation.
@@ -117,7 +118,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Operating Principles"
             title="How we hold ourselves accountable"
-            lead="Four principles govern every Ektelo engagement — written into our statements of work, not just our website."
+            lead="Four principles govern every Ektelio engagement — written into our statements of work, not just our website."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
             {values.map((v, i) => (

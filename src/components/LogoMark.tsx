@@ -1,5 +1,5 @@
 /**
- * Ektelo mark — an "E" reduced to three execution bars accelerating forward,
+ * Ektelio mark — an "E" reduced to three execution bars accelerating forward,
  * enclosed in a precision frame. Reads as motion + order.
  */
 export function LogoMark({ className = "h-8 w-8" }: { className?: string }) {
@@ -23,7 +23,7 @@ export function Wordmark({ dark = false }: { dark?: boolean }) {
           dark ? "text-white" : "text-ink-strong"
         }`}
       >
-        ektelo
+        ektelio
       </span>
     </span>
   );

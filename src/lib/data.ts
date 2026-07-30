@@ -1,5 +1,5 @@
 /**
- * Ektelo — single source of truth for site content.
+ * Ektelio — single source of truth for site content.
  * All pages and cards read from here so copy stays consistent.
  */
 
@@ -32,12 +32,12 @@ import {
 } from "lucide-react";
 
 export const site = {
-  name: "Ektelo",
+  name: "Ektelio",
   tagline: "We digitize operations, not just software.",
   description:
-    "Ektelo is an operational transformation company. We find the hidden inefficiencies inside governments, corporations, and enterprises — then eliminate them with AI, automation, engineering, and process redesign.",
-  url: "https://ektelo.com",
-  email: "engage@ektelo.com",
+    "Ektelio is an operational transformation company. We find the hidden inefficiencies inside governments, corporations, and enterprises — then eliminate them with AI, automation, engineering, and process redesign.",
+  url: "https://ektelio.com",
+  email: "engage@ektelio.com",
   phone: "+256 200 000 000",
   address: "Plot 12, Executive Row, Kampala · Nairobi · Remote worldwide",
 };
@@ -547,7 +547,7 @@ export const heroStats = [
   { value: 96, suffix: "%", label: "engagements hitting target metrics" },
 ];
 
-export const whyEktelo = [
+export const whyEktelio = [
   {
     icon: Gauge,
     title: "Measured in outcomes, not deliverables",

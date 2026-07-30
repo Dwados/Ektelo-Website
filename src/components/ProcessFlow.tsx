@@ -2,7 +2,7 @@ import { process } from "@/lib/data";
 import { Reveal } from "@/components/Reveal";
 
 /**
- * The Ektelo method: Discover → Analyze → Design → Digitize → Automate → Optimize.
+ * The Ektelio method: Discover → Analyze → Design → Digitize → Automate → Optimize.
  * Desktop: 3×2 grid with a connecting rail. Mobile: vertical timeline.
  */
 export function ProcessFlow() {

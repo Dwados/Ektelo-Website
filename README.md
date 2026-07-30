@@ -1,9 +1,9 @@
-# Ektelo — Operational Transformation Company
+# Ektelio — Operational Transformation Company
 
-> **ektelo** — *“to execute.”*
+> **ektelio** — *“to execute.”*
 > We digitize operations, not just software.
 
-Premium enterprise marketing website for Ektelo, an operational transformation
+Premium enterprise marketing website for Ektelio, an operational transformation
 company serving governments, corporations, and enterprises. Positioned alongside
 Palantir / IBM Consulting / McKinsey Digital — but AI-native and execution-focused.
 
@@ -36,28 +36,30 @@ Semantic tokens (Tailwind class → meaning):
 | `ink` / `-strong` / `-soft` / `-faint` | `text-ink-soft` | Text on light bands |
 | `hairline` | `border-hairline` | 1px rules on light |
 
-### Six palettes ship in the box
+### The house palette
 
-| Key | Name | Character |
-|---|---|---|
-| `signature` | Signal Navy | Ink navy + electric blue + measured green (default) |
-| `graphite` | Graphite Ember | Near-black machined greys + a single heated accent |
-| `meridian` | Bronze Standard | Midnight ink + burnished bronze institutional warmth |
-| `sovereign` | Sovereign Petrol | Green-cyan petrol surfaces, intelligence-console cool |
-| `executive` | Bone & Brass | Light-dominant warm bone canvas, dark used as punctuation |
-| `chancery` | Chancery Bronze | Near-black chartered green + bronze + gauge-glass cyan |
+**`ektelio` — Ektelio Standard** is the shipping palette (`DEFAULT_THEME`).
+Petrol-ink surfaces machined to near-black (hue 202, between navy and petrol),
+a blue cooled to #1474C8 so white labels hold 4.85:1, and brass #E2B865 marking
+proven results. It is a three-way merge of Signal Navy, Sovereign Petrol and
+Blued Steel.
+
+Seven earlier explorations remain in `src/theme/palettes.ts` and can be previewed
+or deleted: `signature` (Signal Navy), `graphite` (Graphite Ember), `meridian`
+(Bronze Standard), `sovereign` (Sovereign Petrol), `executive` (Bone & Brass),
+`chancery` (Chancery Bronze), `bluedsteel` (Blued Steel).
 
 ```bash
-EKTELO_THEME=sovereign npm run dev      # preview a palette
-EKTELO_THEME=sovereign npm run build    # builds into .next-sovereign
+EKTELIO_THEME=sovereign npm run dev      # preview another palette
+EKTELIO_THEME=sovereign npm run build    # builds into .next-sovereign
 ```
 
-Every palette was contrast-audited: all 18 load-bearing text pairs clear WCAG AA
-(4.5:1) and graphic elements clear 3:1 in all six. To lock one in permanently,
-set `DEFAULT_THEME` in `src/theme/palettes.ts` and delete the rest.
+Every palette is contrast-audited: all load-bearing text pairs clear WCAG AA
+(4.5:1) and graphic elements clear 3:1.
 
-> Note: `src/app/icon.svg` (the favicon) is a static file and still carries the
-> Signature blue/emerald. Update it by hand if you adopt a different palette.
+> A colour cannot be both 4.5:1 against white and 3:1 against a near-black panel.
+> That is why the hero graphic draws its flow lines in `accentSoft`, never
+> `accent` — don't "fix" that back.
 
 ## Pages
 
@@ -81,5 +83,5 @@ npm start
 ## Notes
 
 - Case studies are **representative sample engagements** (anonymized placeholders) — replace with real ones before launch.
-- Contact form validates inline and opens a pre-filled email to `engage@ektelo.com`; wire a real backend/API route when ready.
+- Contact form validates inline and opens a pre-filled email to `engage@ektelio.com`; wire a real backend/API route when ready.
 - Update `site.url`, email, phone, and address in `src/lib/data.ts` before going live.

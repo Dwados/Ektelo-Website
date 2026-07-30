@@ -8,7 +8,7 @@ import { caseStudies } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Representative Ektelo engagements: measurable operational transformations across government, banking, energy, healthcare, logistics, and manufacturing.",
+    "Representative Ektelio engagements: measurable operational transformations across government, banking, energy, healthcare, logistics, and manufacturing.",
 };
 
 export default function CaseStudiesPage() {
@@ -45,7 +45,7 @@ export default function CaseStudiesPage() {
                     </div>
                     <div>
                       <h3 className="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-ink-faint">
-                        What Ektelo did
+                        What Ektelio did
                       </h3>
                       <p className="mt-2.5 leading-relaxed text-ink-soft">{cs.approach}</p>
                     </div>

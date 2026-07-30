@@ -1,13 +1,13 @@
 /**
- * Ektelo colour system.
+ * Ektelio colour system.
  *
  * Every surface, accent, and text colour in the site resolves to a CSS custom
  * property emitted from one of these palettes. Tailwind never sees a hex value —
  * it references `rgb(var(--c-token) / <alpha-value>)` — so swapping the active
  * palette re-skins the entire site with no component changes.
  *
- * Choose the active palette with the EKTELO_THEME environment variable at build
- * time (see next.config.mjs and app/layout.tsx). Default: "signature".
+ * Choose the active palette with the EKTELIO_THEME environment variable at build
+ * time (see next.config.mjs and app/layout.tsx). Default: "ektelio".
  */
 
 export type Palette = {
@@ -118,7 +118,7 @@ export const palettes: Record<string, Palette> = {
     key: "graphite",
     name: "Graphite Ember",
     oneLiner:
-      "Ektelo is machined graphite with one heated element in it: a struck-copper primary for the work being done, and the pale brass light it throws for the work being verified.",
+      "Ektelio is machined graphite with one heated element in it: a struck-copper primary for the work being done, and the pale brass light it throws for the work being verified.",
     rationale:
       "The original direction was right and is kept intact — every surface, border and text token remains a cool near-neutral (hue held at 210-220, saturation in single digits on the greys), so the expensive read comes from the ramp and not from colour, and there is zero blue in the accent system. Four things were fixed. First, the copper was too dark to survive the surfaces it was designed for: at #A9542B the animated hero flow lines measured 3.18:1 on the raised panel and the button's hover state fell to 2.58:1 on base, below the non-text floor, so a hovered CTA sank into the graphite and read as disabled. Lifting the accent to #B65B2B holds white label text at 4.65:1 while raising on-base to 3.97:1 and on-raised to 3.36:1, and the hover becomes isoluminant-but-hotter (#C44E1F, 4.71:1 white, 3.92:1 on base) so pressing it heats the ember instead of dimming it — the same gesture works on dark and light bands, which a single token has to do here. Second, the secondary was sitting at hsl(40,66%,68%), which is the amber warning band, and it was being used to mean 'verified gain' in front of utilities, hospital groups and central banks — the exact audiences who read amber as degraded. Dropping it to #E1C99B, hsl(39,54%,75%), moves it from alarm lamp to lit brass without leaving the warm family, improves it to 11.46:1 on base, and keeps the greys dominant even though the signal appears on five dark bands' worth of eyebrow labels. Its light sibling was rebuilt to match (#77612C bronze rather than #816415 mustard), which also lifts it off canvasAlt to 5.26:1 and separates it from accentOnLight by 1.25 in luminance plus 24 degrees of hue. Third, the smallest type in the system had the least contrast — textFaint was lighter than textSoft and failed outright at 4.43:1 on the alt bands where half the eyebrow labels live; inverting the pair to #52585F gives 6.89:1 on canvas and 6.36:1 on canvasAlt and yields a clean 17.05 / 9.87 / 6.89 / 5.91 light ramp. Fourth, the dark ramp was too tight to carry the page's structure: base-to-deepest at 1.067 meant the process band and the capabilities band would read as one continuous black on any projector or board-pack print, so deepest went to #08090A and raised to #20242A, giving 1.079 and 1.184. Every load-bearing pair now clears its target with margin rather than by a rounding error.",
     risk:
@@ -151,7 +151,7 @@ export const palettes: Record<string, Palette> = {
     key: "meridian",
     name: "Bronze Standard",
     oneLiner:
-      "Ektelo as an institution rather than a vendor: warm-ink surfaces, aged brass for every action, and the verdigris of results that have been verified.",
+      "Ektelio as an institution rather than a vendor: warm-ink surfaces, aged brass for every action, and the verdigris of results that have been verified.",
     rationale:
       "The original thesis holds and is kept intact: surfaces are a warm ink mixed toward oil and leather rather than navy or slate, so the dark bands read as a printed annual report; the primary is a warm metal pushed down the value scale until white text on the solid fill is real; the secondary is the patina that metal earns with age. Nothing has been neutralised toward blue — there is no blue anywhere in this system, which is what actually separates it from the incumbent navy/#2D7FF9/emerald and from the refined-navy, graphite, and cool-teal siblings.\\n\\nWhat changed is arithmetic, not direction. Four fixes carry most of the weight. (1) accent moves to #A05C18: luminance 0.152 buys enough headroom that the button passes with EITHER white token — 5.20:1 with #FFF, 4.74:1 with the system's own #F7F4F0 — so the accessibility case no longer depends on an undeclared convention; the hue shift from 26 to 30 degrees simultaneously answers the original's own admission that it reads terracotta at button scale, landing it on aged brass instead. (2) accentHover stops going down and starts going sideways: #A24E10 holds 3.05:1 against base so the CTA on the dark hero and dark final CTA does not recede on hover, and spends its state change on chroma and a 4-degree rotation toward red rather than on value it cannot afford. (3) The two accents are now separated where they actually co-occur. The original's 2.7x luminance claim was measured on accent vs signal, but accent is a fill and never appears as a mark on dark; the marks are accentSoft, which sat at 1.02x of signal — zero separation for protan/deutan viewers and zero separation in a photocopied board pack. accentSoft #C08F45 (L* 62.7) against signal #83C7B1 (L* 75.4) gives 12.6 L* and 1.56x, legible in pure greyscale. (4) The palette now declares the rule its own maths forces: on dark surfaces, fills use accent, anything drawn or typed uses accentSoft. No bronze can carry a near-white label and also stroke at 3:1 on a panel that is visibly raised — that window is arithmetically empty. Freeing accent from stroke duty let raised lift to #2D2823 so the hero panel finally reads as raised.\\n\\nThe remainder are targeted repairs: the blueprint grid switched from amber (1.067:1, a smudge) to a neutral warm white at 0.045 (1.118:1, a drafted line) which also stops the dark bands drifting fully sepia; onDarkFaint lifted so the hero panel's mono readouts pass on raised, not just on deepest; hairlineLight de-yellowed and strengthened so white cards on the alt bands have an edge; textFaint given real margin on canvasAlt. canvas, canvasAlt, textStrong, textBody, textSoft, onDarkStrong, onDarkBody, base, deepest and hairlineDark were all measured and left alone — the light-side value ladder and the dark-side text ladder were correct.\\n\\nAll 39 load-bearing pairs now pass: no failures, with the tightest margin at 3.05:1 on a 3:1 requirement and 4.74:1 on a 4.5:1 requirement.",
     risk:
@@ -184,7 +184,7 @@ export const palettes: Record<string, Palette> = {
     key: "sovereign",
     name: "Sovereign Petrol",
     oneLiner:
-      "Ektelo as the instrumented control room behind a state's operations — petrol-dark, sodium-lit, and unmistakably not another blue consultancy.",
+      "Ektelio as the instrumented control room behind a state's operations — petrol-dark, sodium-lit, and unmistakably not another blue consultancy.",
     rationale:
       "The original thesis is sound and is kept: green-cyan petrol surfaces (hue 188-190, now pushed further from navy's 209), one cyan primary doing four jobs, and a sodium amber secondary that survives every form of red-green colour blindness because the blue-yellow axis is intact. What changed is engineering, not direction. The primary was lifted from #0C7387 to #0B7D91 because the original failed the 3:1 non-text floor against its own hero background — the CTA had no boundary — and the corridor for a white-labelled fill on a dark petrol band is only L 0.161-0.183 wide, so base was darkened to #07282F to buy the margin honestly rather than by weakening the button. The hover was made a shallower press so the dark-band CTA no longer sinks into the background on interaction. accentSoft was desaturated 74 to 56 because bright ice cyan over a radial glow is the generic AI-SaaS hero, and this brand cannot afford to look like a 2024 seed deck; it keeps 8.3:1 on base so the flow lines lose nothing. signalOnLight moved from a khaki #7C5310 to a true bronze #975C0A at the same hue and saturation as the amber, so the secondary reads as one colour across the dark/light alternation instead of two. The remaining edits are margin: the hero panel's mono readouts, white cards on the alternating light band, and small tracked-out caps all sat within 6% of their floors and now clear them.",
     risk:
@@ -217,7 +217,7 @@ export const palettes: Record<string, Palette> = {
     key: "executive",
     name: "Bone & Brass",
     oneLiner:
-      "Ektelo as the firm governments hand the mandate to: warm bone paper, deep ink, one petrol line of action, and a patinated brass mark of proof that never outranks it.",
+      "Ektelio as the firm governments hand the mandate to: warm bone paper, deep ink, one petrol line of action, and a patinated brass mark of proof that never outranks it.",
     rationale:
       "This inverts the category. Every AI-native competitor is a dark console; a warm alabaster canvas carrying 16:1 ink headings and hairline rules reads as the printed mandate rather than the product demo — the register of a central bank white paper, Stripe's enterprise pages and premium consulting print. The primary stays a deep petrol at hue 187, a fountain-pen teal that never sounds like SaaS mint or crypto blue, now set at #0E8090: the exact lightness where white button labels still clear 4.5:1 (4.66) while the hero's animated flow lines finally separate from the raised panel (3.39:1 rather than 3.13:1). The correction that matters most is tonal, not chromatic. The original brass was the brightest chromatic element in the system and the primary was the dimmest, so the dark bands read gold-led — opulence rather than execution, and indistinguishable at a glance from a warm-amber direction. Pulling the secondary down to a patinated bronze (L* 62 rather than 71) and pulling accentSoft up to a fuller petrol (L* 71) restores the correct order: petrol leads, bronze witnesses. Two other structural notes survive review and should be protected. textStrong #1A1712 and base #1A1713 are the same ink — the headline type on light bands and the dark punctuation bands are literally one colour, which is why the transitions read as one document rather than two themes. And the darks are warm near-blacks (roughly 3% warm, not sepia), so the hero and CTA feel like ink laid on the same paper stock rather than a slab borrowed from a different palette. The light ladder is untouched deliberately: canvas L* 95.6 / canvasAlt L* 92.1 is a 3.5-point step, subtle across a full-bleed band but unmistakable at the seam, and the warm bone is the single thing separating this from any other light-dominant direction — cooling it toward grey would make it generic.",
     risk:
@@ -312,11 +312,44 @@ export const palettes: Record<string, Palette> = {
       textFaint: "#4F5761",
     },
   },
+  ektelio: {
+    key: "ektelio",
+    name: "Ektelio Standard",
+    oneLiner:
+      "Petrol-ink machined to near-black, one cooled blue current running through it, and brass reserved for the moment a result is proven.",
+    rationale:
+      "A three-way merge of Signal Navy, Sovereign Petrol and Blued Steel. The surfaces take Blued Steel's machined darkness as their lightness envelope but sit at hue 202 — between Signal Navy's 209 and Sovereign's 190 — at roughly 55% saturation, halfway between Blued Steel's near-neutral discipline and the two saturated parents. The result is a deep petrol ink that reads as instrumentation rather than as either navy or grey. The primary is a blue cooled from Signal Navy's 217 toward 208, so it carries Sovereign's cyan lean without becoming teal; at #1474C8 white measures 4.85:1 on it, a real margin at button scale rather than the 4.56:1 the incumbent shipped. The secondary is warm because two of the three parents chose warmth: it splits Sovereign's amber (hue 38, 88% saturation) and Blued Steel's pale brass (hue 43, 50%) at hue 40 and 68%, giving a brass that reads as a struck instrument mark rather than a caution light. Warm-against-cool also survives colour blindness, which the green in Signal Navy did not — that green simulates to near-neutral grey under deuteranopia. The light bands carry the same petrol-ink bias so the palette holds together across the six light bands as well as the five dark ones.",
+    risk:
+      "The blue is now the only saturated element across most of the page, so it will read hotter than it did on Signal Navy's lighter navy ground — if it escapes past buttons, links and light-band eyebrows into fills or icon washes, this drifts toward the generic AI-developer-tool look. The brass appears only on dark bands under the current system rules, so the light half of the site carries no warmth unless that rule is deliberately relaxed. And the surface hue at 202 is close enough to teal that any future photography or illustration with a warm cast will fight it.",
+    colors: {
+      deepest: "#061016",
+      base: "#0C1F29",
+      raised: "#18313F",
+      onDarkStrong: "#F2F7F9",
+      onDarkBody: "#AEC4CD",
+      onDarkFaint: "#85A0AB",
+      hairlineDark: "rgba(174, 214, 230, 0.11)",
+      gridDark: "rgba(120, 190, 220, 0.042)",
+      accent: "#1474C8",
+      accentHover: "#0F5EA3",
+      accentSoft: "#63B1E9",
+      accentOnLight: "#1261A5",
+      signal: "#E2B865",
+      signalOnLight: "#865C13",
+      canvas: "#F9FBFC",
+      canvasAlt: "#E9EFF1",
+      hairlineLight: "#CFDADE",
+      textStrong: "#0D1F28",
+      textBody: "#31454F",
+      textSoft: "#4A616B",
+      textFaint: "#526B76",
+    },
+  },
 };
 
 /* ─────────────────────────── resolution ─────────────────────────── */
 
-export const DEFAULT_THEME = "signature";
+export const DEFAULT_THEME = "ektelio";
 
 export function resolveTheme(key?: string): Palette {
   return palettes[key ?? ""] ?? palettes[DEFAULT_THEME];

@@ -9,7 +9,7 @@ import { industries } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Industries",
   description:
-    "Ektelo transforms operations across government, financial services, healthcare, energy, manufacturing, logistics, telecom, retail, and aviation.",
+    "Ektelio transforms operations across government, financial services, healthcare, energy, manufacturing, logistics, telecom, retail, and aviation.",
 };
 
 export default function IndustriesPage() {

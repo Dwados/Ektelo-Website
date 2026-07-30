@@ -6,7 +6,7 @@ import { site } from "@/lib/data";
 import { resolveTheme, themeVars } from "@/theme/palettes";
 import "./globals.css";
 
-const palette = resolveTheme(process.env.EKTELO_THEME);
+const palette = resolveTheme(process.env.EKTELIO_THEME);
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -31,8 +31,8 @@ const mono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Ektelo — Operational Transformation Company",
-    template: "%s · Ektelo",
+    default: "Ektelio — Operational Transformation Company",
+    template: "%s · Ektelio",
   },
   description: site.description,
   keywords: [
@@ -48,13 +48,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: "Ektelo — We digitize operations, not just software.",
+    title: "Ektelio — We digitize operations, not just software.",
     description: site.description,
     url: site.url,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ektelo — Operational Transformation Company",
+    title: "Ektelio — Operational Transformation Company",
     description: site.description,
   },
   robots: { index: true, follow: true },

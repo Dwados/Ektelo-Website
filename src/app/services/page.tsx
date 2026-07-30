@@ -17,7 +17,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Everything required to transform an operation — under one roof"
-        lead="Advisory firms hand you a plan. Software firms hand you a system. Ektelo delivers the transformed operation: diagnosed, redesigned, digitized, automated, and tuned to target."
+        lead="Advisory firms hand you a plan. Software firms hand you a system. Ektelio delivers the transformed operation: diagnosed, redesigned, digitized, automated, and tuned to target."
       >
         <Reveal delay={0.15} className="mt-10 flex flex-wrap gap-3">
           {serviceGroups.map((g, i) => (

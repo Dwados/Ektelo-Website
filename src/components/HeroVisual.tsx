@@ -60,7 +60,7 @@ export function HeroVisual() {
           </text>
         ))}
 
-        {/* Center: the Ektelo engine */}
+        {/* Center: the Ektelio engine */}
         <g>
           <rect
             x="150"
@@ -73,7 +73,7 @@ export function HeroVisual() {
           />
           <rect x="150" y="180" width="150" height="120" rx="12" fill="url(#engineGlow)" />
           <text x="176" y="228" fontFamily="monospace" fontSize="11" letterSpacing="2" className="fill-accent-soft">
-            EKTELO
+            EKTELIO
           </text>
           <text x="176" y="248" fontFamily="monospace" fontSize="11" letterSpacing="2" className="fill-white">
             ENGINE
