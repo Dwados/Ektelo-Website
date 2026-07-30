@@ -279,6 +279,39 @@ export const palettes: Record<string, Palette> = {
       textFaint: "#56685E",
     },
   },
+  bluedsteel: {
+    key: "bluedsteel",
+    name: "Blued Steel",
+    oneLiner:
+      "Graphite's near-black machining bled toward ink, the incumbent blue as the only current running through it, and brass reserved for the moment a result is proven.",
+    rationale:
+      "From Graphite Ember I kept the surface architecture wholesale as an L* envelope (2.2 / 6.3 / 14.0) rather than as hexes — Signal Navy's stack sits at 4.5 / 11.5 / 18.1, which is why it reads as a lit navy room instead of machined near-black — plus the near-neutral light bands and the warm secondary. From Signal Navy I took the electric blue as primary and then pushed its cool bias into every neutral: the blue channel now leads red by 7 / 12 / 19 points across deepest/base/raised, against Graphite's 2 / 4 / 10 and Navy's 26 / 44 / 56, so the surfaces read as ink graphite rather than either grey or navy. The blue itself is #2569E6, not the client's #2470EC: white on their blue measures 4.56:1, a defect at button scale, and on a neutral near-black ground rather than a navy one an unsupported blue drifts violet, so I dropped luminance ~4% (white now 4.95:1) and moved hue 217.2 to 218.9 toward true blue. Navy's real load-bearing job here is structural, not chromatic — the blueprint grid is explicitly blue (rgba(110,168,232,0.05)) and the hairline is a blue-tinted white at 0.11 alpha, compositing to 1.26:1 on base, exactly matching Graphite's white hairline weight, so the identity blue permeates the architecture at a level too faint to add saturation. The secondary stays Graphite's brass, retuned from #E1C99B to #D9C48F.",
+    risk:
+      "Near-black plus one high-chroma electric blue is also the house style of every AI developer tool, and because the blue is now the only saturated thing on a page of hue-disciplined greys it will read hotter on the hero than it ever did on Signal Navy's ground — if the build lets blue escape beyond buttons, links and light-band eyebrows into fills, tints or icon washes, this tips from Palantir toward Vercel. Secondarily, the brass appears so sparingly (dark-band eyebrows and metric suffixes only) that a screenshot of the mission or approach band contains no warmth at all, and the client may not feel they received a merge on the light half of the site.",
+    colors: {
+      deepest: "#06080D",
+      base: "#10141C",
+      raised: "#1D2430",
+      onDarkStrong: "#F2F4F7",
+      onDarkBody: "#ADB6C2",
+      onDarkFaint: "#868F9C",
+      hairlineDark: "rgba(198, 214, 236, 0.11)",
+      gridDark: "rgba(110, 168, 232, 0.05)",
+      accent: "#2569E6",
+      accentHover: "#1C57CE",
+      accentSoft: "#5F9AEE",
+      accentOnLight: "#1A5AD0",
+      signal: "#D9C48F",
+      signalOnLight: "#6B571F",
+      canvas: "#FAFBFC",
+      canvasAlt: "#EEF0F4",
+      hairlineLight: "#D6DAE1",
+      textStrong: "#14171C",
+      textBody: "#3B424B",
+      textSoft: "#5A626C",
+      textFaint: "#4F5761",
+    },
+  },
 };
 
 /* ─────────────────────────── resolution ─────────────────────────── */
