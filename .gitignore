@@ -18,8 +18,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# env files
+# env files — the template is the one exception, it holds no secrets
 .env*
+!.env.example
 
 # typescript
 *.tsbuildinfo

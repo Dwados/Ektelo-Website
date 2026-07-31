@@ -92,19 +92,48 @@ npm start
 ## Contact form
 
 The form posts to `/api/contact`, which validates, rate-limits (5 per IP per 10
-minutes), and screens bots with a honeypot field plus a minimum time-on-form.
-It then relays the message by email via Resend.
+minutes), screens bots with a honeypot field plus a minimum time-on-form, then
+relays the message to every address in `site.emails`. `Reply-To` is set to the
+enquirer, so replying goes straight to them.
+
+Copy [`.env.example`](.env.example) to `.env.local` and configure **one** provider.
+[`src/lib/mailer.ts`](src/lib/mailer.ts) picks whichever is present, Resend first.
+
+**SMTP** — works today, no domain required:
 
 ```bash
-RESEND_API_KEY=re_xxx                     # required to actually send
-CONTACT_TO=a@x.com,b@y.com                # optional CSV, defaults to site.emails
-CONTACT_FROM="Ektelio <hello@ektelio.com>" # optional, must be a verified sender
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=lumuedwardkiko@gmail.com
+SMTP_PASS=your-16-char-app-password   # Google App Password, not your login
 ```
 
-Without `RESEND_API_KEY` the endpoint returns 503 and the form falls back to
-opening a pre-filled email, so a submission is never silently lost. Note the
-route is server-rendered — the site is otherwise fully static, so deploy
-somewhere that runs Node (Vercel does this by default).
+**Resend** — preferred once `ektelio.com` is registered:
+
+```bash
+RESEND_API_KEY=re_xxx
+CONTACT_FROM="Ektelio Website <engage@ektelio.com>"
+```
+
+> Resend only delivers to the address its account was created with until you
+> verify a sending domain. Add `ektelio.com` under Domains, publish the SPF and
+> DKIM records, and set `CONTACT_FROM` to an address on it — otherwise only one
+> of the two contact addresses will ever receive anything.
+
+Optional for either: `CONTACT_TO=a@x.com,b@y.com` overrides the recipients.
+
+Check what a running deployment actually picked up — it reports the provider and
+recipient count, never a credential:
+
+```bash
+curl https://ektelio.com/api/contact
+# {"provider":"smtp","configured":true,"recipients":2,...}
+```
+
+With no provider configured the endpoint returns 503, and on a delivery failure
+502; in both cases the form hands the visitor a pre-filled email instead, so a
+submission is never silently lost. Note this route is server-rendered — the rest
+of the site is static, so deploy somewhere that runs Node (Vercel does by default).
 
 ## Before going live
 

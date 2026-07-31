@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { site } from "@/lib/data";
+import { activeProvider, providerStatus, sendSubmission } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -85,15 +85,9 @@ export async function POST(request: Request) {
     message,
   };
 
-  const apiKey = process.env.RESEND_API_KEY;
-  // Deliver to every listed address so an enquiry never waits on one inbox.
-  const to = process.env.CONTACT_TO
-    ? process.env.CONTACT_TO.split(",").map((a) => a.trim()).filter(Boolean)
-    : [...site.emails];
-
-  // No mail provider configured yet — record it and tell the client to fall
-  // back to email rather than silently swallowing a real enquiry.
-  if (!apiKey) {
+  if (activeProvider() === "none") {
+    // Log it so a real enquiry is at least recoverable from server logs, and
+    // tell the client to fall back rather than silently swallowing it.
     console.info("[contact] submission received (no mail provider configured)", submission);
     return NextResponse.json(
       { ok: false, fallback: true, error: "Email delivery is not configured yet." },
@@ -101,45 +95,24 @@ export async function POST(request: Request) {
     );
   }
 
-  try {
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: process.env.CONTACT_FROM ?? "Ektelio Website <onboarding@resend.dev>",
-        to,
-        reply_to: email,
-        subject: `Engagement inquiry — ${organization}`,
-        text: [
-          `Name:         ${name}`,
-          `Organization: ${organization}`,
-          `Email:        ${email}`,
-          `Interest:     ${interest || "—"}`,
-          "",
-          message,
-          "",
-          `Received: ${submission.receivedAt}`,
-        ].join("\n"),
-      }),
-    });
+  const result = await sendSubmission(submission);
 
-    if (!res.ok) {
-      console.error("[contact] provider rejected send", res.status, await res.text());
-      return NextResponse.json(
-        { ok: false, fallback: true, error: "We couldn't send that just now." },
-        { status: 502 }
-      );
-    }
-
-    return NextResponse.json({ ok: true });
-  } catch (err) {
-    console.error("[contact] send failed", err);
+  if (!result.ok) {
+    // The reason carries provider detail — useful in logs, never sent to the client.
+    console.error("[contact] send failed:", result.reason, submission);
     return NextResponse.json(
       { ok: false, fallback: true, error: "We couldn't send that just now." },
       { status: 502 }
     );
   }
+
+  return NextResponse.json({ ok: true });
+}
+
+/**
+ * Health check for deployment. Reports which provider is wired up without
+ * revealing any credential, so configuration can be confirmed in production.
+ */
+export async function GET() {
+  return NextResponse.json(providerStatus());
 }
