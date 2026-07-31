@@ -6,18 +6,22 @@ import { ButtonLink } from "@/components/Button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
 import { Section } from "@/components/Section";
-import { caseStudies, industries, services, site } from "@/lib/data";
+import { industries, services, site } from "@/lib/data";
+import { solutions, type SolutionSegment } from "@/lib/solutions";
 
 type Params = { params: Promise<{ slug: string }> };
 
-/** Which sector label on a case study corresponds to which industry page. */
-const SECTOR_MATCH: Record<string, string[]> = {
-  government: ["Government"],
-  "financial-services": ["Financial Services"],
-  healthcare: ["Healthcare"],
-  "energy-utilities": ["Energy & Utilities"],
-  manufacturing: ["Manufacturing"],
-  logistics: ["Logistics & Trade"],
+/** Which buyer segment each sector purchases as. */
+const SEGMENT_FOR: Record<string, SolutionSegment> = {
+  government: "government",
+  "financial-services": "enterprise",
+  healthcare: "enterprise",
+  "energy-utilities": "enterprise",
+  manufacturing: "enterprise",
+  logistics: "enterprise",
+  telecom: "enterprise",
+  "retail-distribution": "enterprise",
+  "aviation-transport": "enterprise",
 };
 
 export function generateStaticParams() {
@@ -45,11 +49,11 @@ export default async function IndustryDetailPage({ params }: Params) {
   const industry = industries.find((i) => i.slug === slug);
   if (!industry) notFound();
 
-  const sectors = SECTOR_MATCH[industry.slug] ?? [];
-  const proof = caseStudies.filter((cs) => sectors.includes(cs.sector));
+  const segment = SEGMENT_FOR[industry.slug] ?? "enterprise";
+  const applicable = solutions.filter((s) => s.segments.includes(segment));
   const others = industries.filter((i) => i.slug !== industry.slug).slice(0, 6);
   const relevant = services.filter((s) =>
-    proof.some((cs) => cs.services.includes(s.title))
+    applicable.some((sol) => sol.services.includes(s.title))
   );
   const shown = relevant.length > 0 ? relevant : services.filter((s) => s.group === "Transform");
 
@@ -111,29 +115,26 @@ export default async function IndustryDetailPage({ params }: Params) {
         </div>
       </Section>
 
-      {proof.length > 0 && (
+      {applicable.length > 0 && (
         <Section tone="mist" className="py-20 sm:py-28">
           <div className="wrap">
             <h2 className="font-display text-display-sm font-semibold text-ink-strong">
-              Work in this sector
+              Solutions that apply in this sector
             </h2>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {proof.map((cs, i) => (
-                <Reveal key={cs.slug} delay={i * 0.07}>
+              {applicable.map((sol, i) => (
+                <Reveal key={sol.slug} delay={Math.min(i * 0.05, 0.25)}>
                   <Link
-                    href={`/case-studies/${cs.slug}`}
+                    href={`/solutions/${sol.slug}`}
                     className="group block h-full cursor-pointer border border-hairline bg-canvas p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
                   >
-                    <p className="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-accent-ink">
-                      {cs.client}
-                    </p>
-                    <h3 className="mt-3 font-display text-xl font-semibold text-ink-strong">
-                      {cs.title}
+                    <h3 className="font-display text-xl font-semibold text-ink-strong">
+                      {sol.title}
                     </h3>
-                    <p className="mt-4 font-display text-2xl font-semibold tabular-nums text-ink-strong">
-                      {cs.results[0].value}
+                    <p className="mt-3 leading-relaxed text-ink-soft">{sol.oneLiner}</p>
+                    <p className="mt-4 font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-accent-ink">
+                      {sol.measures.length} measures committed
                     </p>
-                    <p className="text-sm text-ink-faint">{cs.results[0].label}</p>
                   </Link>
                 </Reveal>
               ))}

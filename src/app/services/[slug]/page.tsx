@@ -6,7 +6,8 @@ import { ButtonLink } from "@/components/Button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
 import { Section, SectionHeading } from "@/components/Section";
-import { caseStudies, process, serviceGroups, services, site } from "@/lib/data";
+import { process, serviceGroups, services, site } from "@/lib/data";
+import { solutions } from "@/lib/solutions";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -37,7 +38,7 @@ export default async function ServiceDetailPage({ params }: Params) {
 
   const group = serviceGroups.find((g) => g.key === service.group);
   const siblings = services.filter((s) => s.group === service.group && s.slug !== service.slug);
-  const proof = caseStudies.filter((cs) => cs.services.includes(service.title));
+  const applied = solutions.filter((s) => s.services.includes(service.title));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -106,28 +107,22 @@ export default async function ServiceDetailPage({ params }: Params) {
           </div>
 
           <aside className="space-y-10">
-            {proof.length > 0 && (
+            {applied.length > 0 && (
               <Reveal delay={0.1}>
                 <h2 className="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-ink-faint">
-                  Where we&rsquo;ve deployed it
+                  Solutions this powers
                 </h2>
                 <ul className="mt-5 space-y-4">
-                  {proof.map((cs) => (
-                    <li key={cs.slug}>
+                  {applied.map((sol) => (
+                    <li key={sol.slug}>
                       <Link
-                        href={`/case-studies/${cs.slug}`}
+                        href={`/solutions/${sol.slug}`}
                         className="group block cursor-pointer border border-hairline p-5 transition-colors hover:border-accent/40"
                       >
-                        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-accent-ink">
-                          {cs.sector}
+                        <p className="font-display font-semibold leading-snug text-ink-strong">
+                          {sol.title}
                         </p>
-                        <p className="mt-2 font-display font-semibold leading-snug text-ink-strong">
-                          {cs.title}
-                        </p>
-                        <p className="mt-3 font-display text-xl font-semibold tabular-nums text-ink-strong">
-                          {cs.results[0].value}
-                        </p>
-                        <p className="text-sm text-ink-faint">{cs.results[0].label}</p>
+                        <p className="mt-2 text-sm leading-relaxed text-ink-soft">{sol.oneLiner}</p>
                       </Link>
                     </li>
                   ))}

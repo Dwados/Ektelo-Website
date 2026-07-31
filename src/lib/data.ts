@@ -48,7 +48,7 @@ export const nav = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Solutions", href: "/solutions" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ] as const;
@@ -356,118 +356,6 @@ export const process: ProcessStep[] = [
     title: "Optimize",
     description: "Dashboards keep score. We tune the operation quarter after quarter until the gains compound.",
     icon: Gauge,
-  },
-];
-
-/* ────────────────────────── Case Studies (representative engagements) ────────────────────────── */
-
-export type CaseStudy = {
-  slug: string;
-  client: string;
-  sector: string;
-  title: string;
-  challenge: string;
-  approach: string;
-  results: { value: string; label: string }[];
-  services: string[];
-};
-
-export const caseStudies: CaseStudy[] = [
-  {
-    slug: "revenue-authority",
-    client: "National Revenue Authority",
-    sector: "Government",
-    title: "Tax registration rebuilt from 21 days to same-day",
-    challenge:
-      "Business registration and tax onboarding ran on paper across four departments. Files moved by courier, approvals took three weeks, and leadership had no view of where any application stood.",
-    approach:
-      "We mapped the end-to-end flow, removed six redundant approval steps, digitized the registry with full audit trails, and deployed document-reading AI to pre-validate applications before an officer ever touches them.",
-    results: [
-      { value: "21 days → same-day", label: "registration turnaround" },
-      { value: "38%", label: "increase in completed registrations" },
-      { value: "100%", label: "of applications trackable end-to-end" },
-    ],
-    services: ["Government Modernization", "Workflow Digitization", "AI Agents"],
-  },
-  {
-    slug: "pan-regional-bank",
-    client: "Pan-Regional Bank",
-    sector: "Financial Services",
-    title: "Corporate onboarding cut from 11 days to under 48 hours",
-    challenge:
-      "Corporate KYC involved 14 handoffs across compliance, legal, and operations. Relationship managers spent a third of their week chasing internal status instead of clients.",
-    approach:
-      "We collapsed the flow to five controlled steps, integrated three core systems that had never spoken, and put AI on document extraction and sanctions pre-screening with compliance holding final sign-off.",
-    results: [
-      { value: "82%", label: "faster onboarding" },
-      { value: "14 → 5", label: "handoffs per case" },
-      { value: "$2.1M", label: "annual operations cost removed" },
-    ],
-    services: ["Business Process Automation", "Systems Integration", "AI Strategy & Implementation"],
-  },
-  {
-    slug: "power-utility",
-    client: "Regional Power Utility",
-    sector: "Energy & Utilities",
-    title: "Meter-to-cash leakage reduced by $4.8M a year",
-    challenge:
-      "Billing ran a month behind consumption. Field readings arrived on paper, exceptions were never reconciled, and an estimated 9% of delivered power was never billed.",
-    approach:
-      "We digitized field capture, built a reconciliation engine that flags anomalies daily, and gave collections a prioritized worklist ranked by recoverable value.",
-    results: [
-      { value: "$4.8M", label: "annual leakage recovered" },
-      { value: "9% → 1.4%", label: "unbilled consumption" },
-      { value: "T+2", label: "billing lag, down from T+30" },
-    ],
-    services: ["Data & Analytics", "Process Engineering", "Performance Dashboards"],
-  },
-  {
-    slug: "hospital-group",
-    client: "Private Hospital Group",
-    sector: "Healthcare",
-    title: "Claims rework cut by two-thirds across 7 facilities",
-    challenge:
-      "One in four insurance claims bounced for missing or inconsistent information. Rework consumed 40 clinical-admin staff and delayed cash by months.",
-    approach:
-      "We standardized claim assembly at the point of care, deployed an AI checker that validates every claim against payer rules before submission, and built a live denials dashboard per facility.",
-    results: [
-      { value: "67%", label: "reduction in claim rework" },
-      { value: "11 days", label: "faster average reimbursement" },
-      { value: "7", label: "facilities on one claims standard" },
-    ],
-    services: ["Business Process Automation", "AI Agents", "Performance Dashboards"],
-  },
-  {
-    slug: "logistics-operator",
-    client: "Continental Logistics Operator",
-    sector: "Logistics & Trade",
-    title: "Border dwell time halved on the busiest corridor",
-    challenge:
-      "Trucks idled up to four days at border crossings waiting on documentation assembled manually from six parties. Every idle day cost the fleet and its clients real money.",
-    approach:
-      "We digitized the document pipeline so clearance packs assemble themselves as shipments move, integrated customs pre-lodgment, and built exception alerts that fire before a truck reaches the gate.",
-    results: [
-      { value: "52%", label: "reduction in border dwell time" },
-      { value: "3,100+", label: "driver-days saved annually" },
-      { value: "96%", label: "documents cleared pre-arrival" },
-    ],
-    services: ["Workflow Digitization", "Systems Integration", "Custom Internal Platforms"],
-  },
-  {
-    slug: "manufacturing-group",
-    client: "Industrial Manufacturing Group",
-    sector: "Manufacturing",
-    title: "OEE up 14 points without new machinery",
-    challenge:
-      "Three plants reported production on paper, reconciled weekly. Downtime causes were guessed, quality escapes were caught by customers, and planning ran on last month's numbers.",
-    approach:
-      "We instrumented lines with live production capture, rebuilt the planning process around actual takt data, and put a daily operations cadence in place with one shared dashboard.",
-    results: [
-      { value: "+14 pts", label: "overall equipment effectiveness" },
-      { value: "61%", label: "fewer quality escapes" },
-      { value: "Weekly → live", label: "production visibility" },
-    ],
-    services: ["Operational Transformation", "Data & Analytics", "Performance Dashboards"],
   },
 ];
 

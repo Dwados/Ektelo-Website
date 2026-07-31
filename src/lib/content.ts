@@ -817,15 +817,15 @@ export const trustPages: Record<string, TrustPage> = {
         ]
       },
       {
-        "heading": "Case Studies and Figures Are Illustrative",
+        "heading": "Solutions, Measures and Figures",
         "blocks": [
           {
             "type": "p",
-            "text": "Case studies, metrics, timelines, and percentages on the site are illustrative. They describe work in a specific context, at a specific time, under conditions particular to that organization. Some are anonymized or presented as composites to protect client confidentiality."
+            "text": "The Operational Solutions pages describe what Ektelio does and the measures an engagement would be baselined and held against. They are descriptions of method, not records of completed work, and this site publishes no client case studies. Any timeframe, range, or indicative figure shown is illustrative of the class of work and is not drawn from a specific engagement."
           },
           {
             "type": "p",
-            "text": "No figure on this site is a forecast, promise, or warranty of the results you would obtain. Outcomes depend on data quality, process maturity, governance, staffing, and decisions outside our control. Any commitment on scope, service levels, or measurable outcomes exists only where it is written into a signed agreement."
+            "text": "Nothing on this site is a forecast, promise, or warranty of the results you would obtain. Outcomes depend on data quality, process maturity, governance, staffing, and decisions outside our control. Any commitment on scope, service levels, or measurable outcomes exists only where it is written into a signed agreement."
           }
         ]
       },

@@ -31,14 +31,8 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    ".next-chancery/types/**/*.ts",
-    ".next-executive/types/**/*.ts",
-    ".next-graphite/types/**/*.ts",
-    ".next-meridian/types/**/*.ts",
-    ".next-sovereign/types/**/*.ts",
     ".next/types/**/*.ts",
-    "next-env.d.ts",
-    ".next-bluedsteel/types/**/*.ts"
+    "next-env.d.ts"
   ],
   "exclude": [
     "node_modules"

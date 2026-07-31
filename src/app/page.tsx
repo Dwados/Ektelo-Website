@@ -9,7 +9,6 @@ import { Section, SectionHeading } from "@/components/Section";
 import { Stat } from "@/components/Stat";
 import {
   capabilities,
-  caseStudies,
   heroStats,
   industries,
   sectorsServed,
@@ -17,6 +16,7 @@ import {
   services,
   whyEktelio,
 } from "@/lib/data";
+import { solutionSegments, solutions } from "@/lib/solutions";
 
 export const metadata: Metadata = {
   title: "Ektelio — Operational Transformation Company",
@@ -25,8 +25,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const featured = caseStudies[0];
-
   return (
     <>
       {/* ───────────── 1 · Hero ───────────── */}
@@ -55,8 +53,8 @@ export default function HomePage() {
               <ButtonLink href="/contact" size="lg">
                 Start a conversation
               </ButtonLink>
-              <ButtonLink href="/case-studies" size="lg" variant="outline-dark" arrow={false}>
-                See the results
+              <ButtonLink href="/solutions" size="lg" variant="outline-dark" arrow={false}>
+                See what we solve
               </ButtonLink>
             </Reveal>
             <Reveal delay={0.3}>
@@ -345,48 +343,64 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ───────────── 10 · Featured result ───────────── */}
+      {/* ───────────── 10 · Solutions by client type ───────────── */}
       <Section tone="white" className="py-24 sm:py-32">
         <div className="wrap">
-          <SectionHeading
-            eyebrow="Proof"
-            title="Results our clients can put in an annual report"
-          />
-          <Reveal delay={0.1} className="mt-12">
-            <Link
-              href="/case-studies"
-              className="group block cursor-pointer border border-hairline shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-            >
-              <div className="grid lg:grid-cols-[1.2fr_1fr]">
-                <div className="p-8 sm:p-12">
-                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent-ink">
-                    {featured.sector} · {featured.client}
-                  </p>
-                  <h3 className="mt-4 font-display text-display-sm font-semibold text-ink-strong">
-                    {featured.title}
-                  </h3>
-                  <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">{featured.challenge}</p>
-                  <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
-                    Read the full case study
-                    <ArrowRight
-                      className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                      aria-hidden="true"
-                    />
-                  </span>
-                </div>
-                <div className="grid content-center gap-8 border-t border-hairline bg-canvas-alt p-8 sm:p-12 lg:border-l lg:border-t-0">
-                  {featured.results.map((r) => (
-                    <div key={r.label}>
-                      <p className="font-display text-3xl font-semibold tabular-nums text-ink-strong">
-                        {r.value}
-                      </p>
-                      <p className="mt-1 text-sm text-ink-faint">{r.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Link>
-          </Reveal>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <SectionHeading
+              eyebrow="Operational Solutions"
+              title="We publish what we agree to be measured on"
+              lead="No case studies and no borrowed percentages. For every solution: the numbers baselined at the start, the target agreed in writing before any build, and the threshold that has to hold at handover."
+            />
+            <Reveal delay={0.15}>
+              <ButtonLink href="/solutions" variant="outline-light">
+                All solutions
+              </ButtonLink>
+            </Reveal>
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+            {solutionSegments.map((segment, i) => {
+              const list = solutions.filter((s) => s.segments.includes(segment.key));
+              return (
+                <Reveal key={segment.key} delay={i * 0.08} className="h-full">
+                  <div className="flex h-full flex-col border border-hairline p-8 transition-colors duration-300 hover:border-accent/40">
+                    <span className="font-mono text-xs uppercase tracking-[0.25em] text-accent-ink">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-4 font-display text-xl font-semibold text-ink-strong">
+                      {segment.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-[0.9375rem] leading-relaxed text-ink-soft">
+                      {segment.framing}
+                    </p>
+                    <ul className="mt-6 space-y-2.5 border-t border-hairline pt-5">
+                      {list.slice(0, 4).map((sol) => (
+                        <li key={sol.slug}>
+                          <Link
+                            href={`/solutions/${sol.slug}`}
+                            className="group/link flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 -mx-3 text-[0.9375rem] font-medium text-ink transition-colors hover:bg-canvas-alt hover:text-ink-strong"
+                          >
+                            {sol.title}
+                            <ArrowUpRight
+                              className="ml-auto h-3.5 w-3.5 shrink-0 text-ink-faint opacity-0 transition-opacity group-hover/link:opacity-100"
+                              aria-hidden="true"
+                            />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href={`/solutions#${segment.key}`}
+                      className="mt-5 inline-flex cursor-pointer items-center gap-1.5 text-sm font-semibold text-accent-ink hover:underline"
+                    >
+                      All {list.length} for {segment.title.toLowerCase()}
+                    </Link>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </Section>
 

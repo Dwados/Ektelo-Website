@@ -64,10 +64,10 @@ Every palette is contrast-audited: all load-bearing text pairs clear WCAG AA
 ## Pages
 
 **Top level** — `/` Home · `/about` · `/services` · `/industries` ·
-`/case-studies` · `/insights` · `/contact` · `/careers`
+`/solutions` · `/insights` · `/contact` · `/careers`
 
 **Detail pages** (statically generated) — `/services/[slug]` ×14,
-`/industries/[slug]` ×9, `/case-studies/[slug]` ×6, `/insights/[slug]` ×6
+`/industries/[slug]` ×9, `/solutions/[slug]` ×15, `/insights/[slug]` ×6
 
 **Trust & legal** — `/privacy` · `/terms` · `/accessibility` · `/security`
 
@@ -76,9 +76,9 @@ Every palette is contrast-audited: all load-bearing text pairs clear WCAG AA
 for Organization, Service, Article, FAQPage, and BreadcrumbList.
 
 Content is split in two: [`src/lib/data.ts`](src/lib/data.ts) holds the
-structural content (services, industries, case studies, navigation, contact
-details) and [`src/lib/content.ts`](src/lib/content.ts) holds the long-form
-content (insight essays, the legal and trust pages, the FAQ, careers).
+structural content (services, industries, navigation, contact details) and [`src/lib/content.ts`](src/lib/content.ts) holds the long-form
+content (insight essays, the legal and trust pages, the FAQ, careers). The solutions
+catalogue lives in [`src/lib/solutions.ts`](src/lib/solutions.ts).
 
 ## Develop
 
@@ -108,8 +108,6 @@ somewhere that runs Node (Vercel does this by default).
 
 ## Before going live
 
-- Case studies are **representative sample engagements** with invented clients
-  and figures. Replace them, or cut the ones you cannot evidence.
 - Set `site.url` in `src/lib/data.ts` to the real domain — it feeds every
   canonical URL, the sitemap, and the JSON-LD.
 - Confirm the address in `site.address`.
