@@ -72,6 +72,7 @@ const orgJsonLd = {
   name: site.name,
   url: site.url,
   email: site.email,
+  telephone: site.phones,
   slogan: "We digitize operations, not just software.",
   description: site.description,
   areaServed: "Worldwide",

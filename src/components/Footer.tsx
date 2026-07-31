@@ -72,9 +72,17 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-signal" aria-hidden="true" />
-              <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="cursor-pointer transition-colors hover:text-white">
-                {site.phone}
-              </a>
+              <span className="flex flex-col gap-1">
+                {site.phones.map((phone) => (
+                  <a
+                    key={phone}
+                    href={`tel:${phone.replace(/\s/g, "")}`}
+                    className="cursor-pointer transition-colors hover:text-white"
+                  >
+                    {phone}
+                  </a>
+                ))}
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-signal" aria-hidden="true" />

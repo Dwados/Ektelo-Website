@@ -77,14 +77,19 @@ export default function ContactPage() {
                       {site.email}
                     </a>
                   </li>
-                  <li className="flex items-center gap-3">
-                    <Phone className="h-4 w-4 shrink-0 text-accent-ink" aria-hidden="true" />
-                    <a
-                      href={`tel:${site.phone.replace(/\s/g, "")}`}
-                      className="cursor-pointer font-medium text-ink-strong hover:text-accent-ink"
-                    >
-                      {site.phone}
-                    </a>
+                  <li className="flex items-start gap-3">
+                    <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent-ink" aria-hidden="true" />
+                    <span className="flex flex-col gap-1">
+                      {site.phones.map((phone) => (
+                        <a
+                          key={phone}
+                          href={`tel:${phone.replace(/\s/g, "")}`}
+                          className="cursor-pointer font-medium text-ink-strong hover:text-accent-ink"
+                        >
+                          {phone}
+                        </a>
+                      ))}
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-ink" aria-hidden="true" />

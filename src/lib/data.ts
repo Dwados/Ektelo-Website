@@ -36,10 +36,12 @@ export const site = {
   tagline: "We digitize operations, not just software.",
   description:
     "Ektelio is an operational transformation company. We find the hidden inefficiencies inside governments, corporations, and enterprises — then eliminate them with AI, automation, engineering, and process redesign.",
+  // TODO before launch: replace with the live domain once registered.
   url: "https://ektelio.com",
-  email: "engage@ektelio.com",
-  phone: "+256 200 000 000",
-  address: "Plot 12, Executive Row, Kampala · Nairobi · Remote worldwide",
+  email: "lumuedwardkiko@gmail.com",
+  phones: ["+256 760 344 344", "+256 778 082 686"],
+  // TODO before launch: confirm the address you want published.
+  address: "Kampala, Uganda · Remote worldwide",
 };
 
 export const nav = [
