@@ -75,9 +75,17 @@ export function Footer() {
           <ul className="mt-5 space-y-4 text-sm">
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-signal" aria-hidden="true" />
-              <a href={`mailto:${site.email}`} className="cursor-pointer transition-colors hover:text-white">
-                {site.email}
-              </a>
+              <span className="flex flex-col gap-1">
+                {site.emails.map((email) => (
+                  <a
+                    key={email}
+                    href={`mailto:${email}`}
+                    className="cursor-pointer transition-colors hover:text-white"
+                  >
+                    {email}
+                  </a>
+                ))}
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-signal" aria-hidden="true" />

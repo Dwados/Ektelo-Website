@@ -57,7 +57,7 @@ export function ContactForm() {
     const body = encodeURIComponent(
       `Name: ${v.name}\nOrganization: ${v.organization}\nEmail: ${v.email}\nArea of interest: ${interest}\n\n${v.message}`
     );
-    return `mailto:${site.email}?subject=${subject}&body=${body}`;
+    return `mailto:${site.emails[0]}?subject=${subject}&body=${body}`;
   };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -146,10 +146,10 @@ export function ContactForm() {
             </>
           )}
           <a
-            href={`mailto:${site.email}`}
+            href={`mailto:${site.emails[0]}`}
             className="cursor-pointer font-semibold text-accent-ink hover:underline"
           >
-            {site.email}
+            {site.emails[0]}
           </a>
           .
         </p>

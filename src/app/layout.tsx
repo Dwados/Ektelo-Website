@@ -71,7 +71,7 @@ const orgJsonLd = {
   "@type": "ProfessionalService",
   name: site.name,
   url: site.url,
-  email: site.email,
+  email: site.emails,
   telephone: site.phones,
   slogan: "We digitize operations, not just software.",
   description: site.description,

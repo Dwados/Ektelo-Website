@@ -73,7 +73,7 @@ export default function CareersPage() {
                   </h3>
                   <p className="mt-3 flex-1 leading-relaxed text-ink-soft">{role.summary}</p>
                   <a
-                    href={`mailto:${site.email}?subject=${encodeURIComponent(`Application — ${role.title}`)}`}
+                    href={`mailto:${site.emails[0]}?subject=${encodeURIComponent(`Application — ${role.title}`)}`}
                     className="mt-6 inline-flex cursor-pointer items-center gap-1.5 text-sm font-semibold text-accent-ink hover:underline"
                   >
                     Apply for this role
@@ -98,7 +98,7 @@ export default function CareersPage() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <ButtonLink href={`mailto:${site.email}?subject=${encodeURIComponent("Working at Ektelio")}`} size="lg">
+            <ButtonLink href={`mailto:${site.emails[0]}?subject=${encodeURIComponent("Working at Ektelio")}`} size="lg">
               Write to us
             </ButtonLink>
           </Reveal>

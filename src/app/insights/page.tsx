@@ -114,7 +114,7 @@ export default function InsightsPage() {
                   Request it and we'll add you personally — no automation theater.
                 </p>
               </div>
-              <ButtonLink href={`mailto:${site.email}?subject=Subscribe%20me%20to%20The%20Operations%20Brief`}>
+              <ButtonLink href={`mailto:${site.emails[0]}?subject=Subscribe%20me%20to%20The%20Operations%20Brief`}>
                 Request the brief
               </ButtonLink>
             </div>

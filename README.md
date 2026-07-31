@@ -97,7 +97,7 @@ It then relays the message by email via Resend.
 
 ```bash
 RESEND_API_KEY=re_xxx                     # required to actually send
-CONTACT_TO=lumuedwardkiko@gmail.com       # optional, defaults to site.email
+CONTACT_TO=a@x.com,b@y.com                # optional CSV, defaults to site.emails
 CONTACT_FROM="Ektelio <hello@ektelio.com>" # optional, must be a verified sender
 ```
 

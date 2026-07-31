@@ -50,7 +50,7 @@ export default function Error({
             Back to home
           </Link>
           <a
-            href={`mailto:${site.email}?subject=${encodeURIComponent("Website error")}`}
+            href={`mailto:${site.emails[0]}?subject=${encodeURIComponent("Website error")}`}
             className="cursor-pointer text-sm font-semibold text-accent-soft hover:text-white"
           >
             Report it

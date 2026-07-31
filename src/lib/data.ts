@@ -38,7 +38,8 @@ export const site = {
     "Ektelio is an operational transformation company. We find the hidden inefficiencies inside governments, corporations, and enterprises — then eliminate them with AI, automation, engineering, and process redesign.",
   // TODO before launch: replace with the live domain once registered.
   url: "https://ektelio.com",
-  email: "lumuedwardkiko@gmail.com",
+  /** First entry is the primary — it is what mailto links and form replies use. */
+  emails: ["lumuedwardkiko@gmail.com", "ssentanmuseth@gmail.com"],
   phones: ["+256 760 344 344", "+256 778 082 686"],
   // TODO before launch: confirm the address you want published.
   address: "Kampala, Uganda · Remote worldwide",

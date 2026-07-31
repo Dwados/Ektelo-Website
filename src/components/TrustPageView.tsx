@@ -78,13 +78,18 @@ export function TrustPageView({ pageKey }: { pageKey: string }) {
 
             <p className="mt-14 border-t border-hairline pt-8 text-sm leading-relaxed text-ink-faint">
               Questions about this page? Write to{" "}
-              <a
-                href={`mailto:${site.email}`}
-                className="cursor-pointer font-semibold text-accent-ink hover:underline"
-              >
-                {site.email}
-              </a>{" "}
-              or call {site.phones[0]}.
+              {site.emails.map((email, i) => (
+                <span key={email}>
+                  {i > 0 && " or "}
+                  <a
+                    href={`mailto:${email}`}
+                    className="cursor-pointer font-semibold text-accent-ink hover:underline"
+                  >
+                    {email}
+                  </a>
+                </span>
+              ))}
+              , or call {site.phones[0]}.
             </p>
           </div>
         </div>

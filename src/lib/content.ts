@@ -749,7 +749,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "Email lumuedwardkiko@gmail.com with \"Data request\" in the subject line. State the right you are exercising and the name or email address you used, so we can find the record. We may ask one question to verify identity."
+            "text": "Email lumuedwardkiko@gmail.com or ssentanmuseth@gmail.com with \"Data request\" in the subject line. State the right you are exercising and the name or email address you used, so we can find the record. We may ask one question to verify identity."
           },
           {
             "type": "p",
@@ -766,7 +766,7 @@ export const trustPages: Record<string, TrustPage> = {
           },
           {
             "type": "p",
-            "text": "Email lumuedwardkiko@gmail.com. Telephone +256 760 344 344 or +256 778 082 686. A mailing address is available on request."
+            "text": "Email lumuedwardkiko@gmail.com or ssentanmuseth@gmail.com. Telephone +256 760 344 344 or +256 778 082 686. A mailing address is available on request."
           }
         ]
       }
@@ -812,7 +812,7 @@ export const trustPages: Record<string, TrustPage> = {
           },
           {
             "type": "p",
-            "text": "\"Ektelio\", the Ektelio logo, and the wording used to identify our work are marks used by Ektelio in trade, whether or not registered in any jurisdiction. Their use requires our written consent. Other names and marks belong to their owners and appear for identification only. Permission requests: lumuedwardkiko@gmail.com."
+            "text": "\"Ektelio\", the Ektelio logo, and the wording used to identify our work are marks used by Ektelio in trade, whether or not registered in any jurisdiction. Their use requires our written consent. Other names and marks belong to their owners and appear for identification only. Permission requests: lumuedwardkiko@gmail.com or ssentanmuseth@gmail.com."
           }
         ]
       },
@@ -886,7 +886,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "We may revise these terms. The version published on this page is the version in force, and continued use of the site after a change means you accept it. On request to lumuedwardkiko@gmail.com we will confirm which version was in force on a stated date."
+            "text": "We may revise these terms. The version published on this page is the version in force, and continued use of the site after a change means you accept it. On request to lumuedwardkiko@gmail.com or ssentanmuseth@gmail.com we will confirm which version was in force on a stated date."
           }
         ]
       },
@@ -904,7 +904,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "If a provision is found unenforceable, it is severed and the remainder continues in force. Questions, permission requests, and correction or takedown requests: lumuedwardkiko@gmail.com, +256 760 344 344, or +256 778 082 686."
+            "text": "If a provision is found unenforceable, it is severed and the remainder continues in force. Questions, permission requests, and correction or takedown requests: lumuedwardkiko@gmail.com or ssentanmuseth@gmail.com, +256 760 344 344, or +256 778 082 686."
           }
         ]
       }
@@ -1004,7 +1004,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "Write to lumuedwardkiko@gmail.com with \"Accessibility\" in the subject line. You can also telephone +256 760 344 344 or +256 778 082 686. Ektelio operates from Kampala, Uganda, and remotely."
+            "text": "Write to lumuedwardkiko@gmail.com or ssentanmuseth@gmail.com with \"Accessibility\" in the subject line. You can also telephone +256 760 344 344 or +256 778 082 686. Ektelio operates from Kampala, Uganda, and remotely."
           },
           {
             "type": "p",
@@ -1166,7 +1166,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "Security questionnaires, data processing agreements, sub-processor lists, and control documentation are available on request: lumuedwardkiko@gmail.com, +256 760 344 344 or +256 778 082 686. Ektelio operates from Kampala, Uganda and works remotely with clients in other jurisdictions. Data protection enquiries use the same channel. Where an engagement requires a named data protection contact, that person is designated in the engagement documentation and identified to the client before processing begins."
+            "text": "Security questionnaires, data processing agreements, sub-processor lists, and control documentation are available on request: lumuedwardkiko@gmail.com or ssentanmuseth@gmail.com, +256 760 344 344 or +256 778 082 686. Ektelio operates from Kampala, Uganda and works remotely with clients in other jurisdictions. Data protection enquiries use the same channel. Where an engagement requires a named data protection contact, that person is designated in the engagement documentation and identified to the client before processing begins."
           }
         ]
       }

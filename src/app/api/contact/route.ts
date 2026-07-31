@@ -86,7 +86,10 @@ export async function POST(request: Request) {
   };
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO ?? site.email;
+  // Deliver to every listed address so an enquiry never waits on one inbox.
+  const to = process.env.CONTACT_TO
+    ? process.env.CONTACT_TO.split(",").map((a) => a.trim()).filter(Boolean)
+    : [...site.emails];
 
   // No mail provider configured yet — record it and tell the client to fall
   // back to email rather than silently swallowing a real enquiry.
@@ -107,7 +110,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: process.env.CONTACT_FROM ?? "Ektelio Website <onboarding@resend.dev>",
-        to: [to],
+        to,
         reply_to: email,
         subject: `Engagement inquiry — ${organization}`,
         text: [

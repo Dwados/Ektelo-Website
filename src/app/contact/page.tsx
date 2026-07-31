@@ -72,11 +72,19 @@ export default function ContactPage() {
                   Direct lines
                 </h2>
                 <ul className="mt-5 space-y-4 text-[0.9375rem]">
-                  <li className="flex items-center gap-3">
-                    <Mail className="h-4 w-4 shrink-0 text-accent-ink" aria-hidden="true" />
-                    <a href={`mailto:${site.email}`} className="cursor-pointer font-medium text-ink-strong hover:text-accent-ink">
-                      {site.email}
-                    </a>
+                  <li className="flex items-start gap-3">
+                    <Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent-ink" aria-hidden="true" />
+                    <span className="flex flex-col gap-1">
+                      {site.emails.map((email) => (
+                        <a
+                          key={email}
+                          href={`mailto:${email}`}
+                          className="cursor-pointer font-medium text-ink-strong hover:text-accent-ink"
+                        >
+                          {email}
+                        </a>
+                      ))}
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent-ink" aria-hidden="true" />
