@@ -5,6 +5,15 @@ import { Wordmark } from "@/components/LogoMark";
 
 const footerServices = services.slice(0, 6);
 
+const company = [...nav, { label: "Careers", href: "/careers" }];
+
+const legal = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Accessibility", href: "/accessibility" },
+  { label: "Security", href: "/security" },
+];
+
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-surface-deep text-on-dark">
@@ -29,7 +38,7 @@ export function Footer() {
             Company
           </p>
           <ul className="mt-5 space-y-3 text-sm">
-            {nav.map((item) => (
+            {company.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="cursor-pointer transition-colors hover:text-white">
                   {item.label}
@@ -93,11 +102,20 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/[0.06]">
-        <div className="wrap flex flex-col items-start justify-between gap-3 py-6 text-xs text-on-dark-faint sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Ektelio. All rights reserved.</p>
-          <p className="font-mono uppercase tracking-[0.18em]">
-            Better operations. Measurably.
-          </p>
+        <div className="wrap flex flex-col gap-4 py-6 text-xs text-on-dark-faint lg:flex-row lg:items-center lg:justify-between">
+          <nav aria-label="Legal">
+            <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              <li>© {new Date().getFullYear()} Ektelio. All rights reserved.</li>
+              {legal.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="cursor-pointer transition-colors hover:text-white">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <p className="font-mono uppercase tracking-[0.18em]">Better operations. Measurably.</p>
         </div>
       </div>
     </footer>

@@ -63,25 +63,56 @@ Every palette is contrast-audited: all load-bearing text pairs clear WCAG AA
 
 ## Pages
 
-`/` Home (hero, stats, sectors, mission, approach, services, industries, why,
-6-step process, capabilities, featured result, CTA) · `/about` · `/services` ·
-`/industries` · `/case-studies` · `/insights` · `/contact` + 404, sitemap,
-robots, JSON-LD organization schema.
+**Top level** — `/` Home · `/about` · `/services` · `/industries` ·
+`/case-studies` · `/insights` · `/contact` · `/careers`
 
-All content lives in [`src/lib/data.ts`](src/lib/data.ts) — one file to edit copy,
-services, industries, case studies, and insights.
+**Detail pages** (statically generated) — `/services/[slug]` ×14,
+`/industries/[slug]` ×9, `/case-studies/[slug]` ×6, `/insights/[slug]` ×6
+
+**Trust & legal** — `/privacy` · `/terms` · `/accessibility` · `/security`
+
+**Machine-readable** — `sitemap.xml`, `robots.txt`, `manifest.webmanifest`,
+`/insights/rss.xml`, generated `opengraph-image` and `apple-icon`, plus JSON-LD
+for Organization, Service, Article, FAQPage, and BreadcrumbList.
+
+Content is split in two: [`src/lib/data.ts`](src/lib/data.ts) holds the
+structural content (services, industries, case studies, navigation, contact
+details) and [`src/lib/content.ts`](src/lib/content.ts) holds the long-form
+content (insight essays, the legal and trust pages, the FAQ, careers).
 
 ## Develop
 
 ```bash
 npm install
 npm run dev     # http://localhost:3000
-npm run build   # static production build
+npm run build
 npm start
 ```
 
-## Notes
+## Contact form
 
-- Case studies are **representative sample engagements** (anonymized placeholders) — replace with real ones before launch.
-- Contact form validates inline and opens a pre-filled email to `engage@ektelio.com`; wire a real backend/API route when ready.
-- Update `site.url`, email, phone, and address in `src/lib/data.ts` before going live.
+The form posts to `/api/contact`, which validates, rate-limits (5 per IP per 10
+minutes), and screens bots with a honeypot field plus a minimum time-on-form.
+It then relays the message by email via Resend.
+
+```bash
+RESEND_API_KEY=re_xxx                     # required to actually send
+CONTACT_TO=lumuedwardkiko@gmail.com       # optional, defaults to site.email
+CONTACT_FROM="Ektelio <hello@ektelio.com>" # optional, must be a verified sender
+```
+
+Without `RESEND_API_KEY` the endpoint returns 503 and the form falls back to
+opening a pre-filled email, so a submission is never silently lost. Note the
+route is server-rendered — the site is otherwise fully static, so deploy
+somewhere that runs Node (Vercel does this by default).
+
+## Before going live
+
+- Case studies are **representative sample engagements** with invented clients
+  and figures. Replace them, or cut the ones you cannot evidence.
+- Set `site.url` in `src/lib/data.ts` to the real domain — it feeds every
+  canonical URL, the sitemap, and the JSON-LD.
+- Confirm the address in `site.address`.
+- Have counsel review `/privacy` and `/terms`. They are accurate to how the site
+  actually behaves but they are not legal advice.
+- Prune the seven unused palettes from `src/theme/palettes.ts`.

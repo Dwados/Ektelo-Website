@@ -55,6 +55,52 @@
     @apply inline-block h-[7px] w-[7px] bg-current;
   }
 
+  /* Board packs get printed. Make that not embarrassing. */
+  @media print {
+    header,
+    footer,
+    nav[aria-label="Breadcrumb"],
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: #fff !important;
+      color: #000 !important;
+      font-size: 11pt;
+    }
+    .wrap {
+      max-width: none;
+      padding: 0;
+    }
+    section {
+      background: #fff !important;
+      color: #000 !important;
+      padding-block: 0.75rem !important;
+    }
+    a[href^="http"]::after {
+      content: " (" attr(href) ")";
+      font-size: 9pt;
+      word-break: break-all;
+    }
+    h1,
+    h2,
+    h3 {
+      break-after: avoid;
+      color: #000 !important;
+    }
+    p,
+    li {
+      orphans: 3;
+      widows: 3;
+    }
+    details {
+      break-inside: avoid;
+    }
+    details > summary + * {
+      display: block !important;
+    }
+  }
+
   /* Blueprint grid backdrop */
   .grid-lines-dark {
     background-image: linear-gradient(var(--c-grid-dark) 1px, transparent 1px),

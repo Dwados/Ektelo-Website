@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ButtonLink } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
@@ -36,7 +37,10 @@ export default function InsightsPage() {
         <div className="wrap">
           {/* Featured essay */}
           <Reveal>
-            <article className="group grid overflow-hidden border border-hairline shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover lg:grid-cols-2">
+            <Link
+              href={`/insights/${lead.slug}`}
+              className="group grid cursor-pointer overflow-hidden border border-hairline shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover lg:grid-cols-2"
+            >
               <div className="relative hidden min-h-[280px] overflow-hidden bg-surface lg:block">
                 <div className="grid-lines-dark absolute inset-0" aria-hidden="true" />
                 <div className="absolute inset-0 bg-hero-radial" aria-hidden="true" />
@@ -57,18 +61,24 @@ export default function InsightsPage() {
                 </h2>
                 <p className="mt-4 text-lg leading-relaxed text-ink-soft">{lead.excerpt}</p>
                 <p className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
-                  Full essay available on request
-                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  Read the essay
+                  <ArrowUpRight
+                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    aria-hidden="true"
+                  />
                 </p>
               </div>
-            </article>
+            </Link>
           </Reveal>
 
           {/* Grid */}
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {rest.map((post, i) => (
               <Reveal key={post.slug} delay={Math.min(i * 0.06, 0.25)} className="h-full">
-                <article className="group flex h-full flex-col border border-hairline bg-canvas p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-card-hover">
+                <Link
+                  href={`/insights/${post.slug}`}
+                  className="group flex h-full cursor-pointer flex-col border border-hairline bg-canvas p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-card-hover"
+                >
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-ink-faint">
                     <span className="text-accent-ink">{post.category}</span>
                     <span aria-hidden="true">·</span>
@@ -80,10 +90,14 @@ export default function InsightsPage() {
                   <p className="mt-3 flex-1 text-[0.9375rem] leading-relaxed text-ink-soft">
                     {post.excerpt}
                   </p>
-                  <p className="mt-5 font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-ink-faint">
+                  <p className="mt-5 flex items-center justify-between font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-ink-faint">
                     {post.readTime} read
+                    <ArrowUpRight
+                      className="h-4 w-4 text-accent-ink opacity-0 transition-opacity group-hover:opacity-100"
+                      aria-hidden="true"
+                    />
                   </p>
-                </article>
+                </Link>
               </Reveal>
             ))}
           </div>

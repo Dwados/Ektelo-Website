@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Clock4, FileSearch, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { Faq } from "@/components/Faq";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { Section } from "@/components/Section";
+import { Section, SectionHeading } from "@/components/Section";
 import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -107,6 +108,20 @@ export default function ContactPage() {
                 </p>
               </blockquote>
             </Reveal>
+          </div>
+        </div>
+      </Section>
+
+      {/* Questions buyers ask before signing anything */}
+      <Section tone="mist" className="py-20 sm:py-28">
+        <div className="wrap">
+          <SectionHeading
+            eyebrow="Before you engage"
+            title="The questions we get asked first"
+            lead="Straight answers on how engagements start, what they cost, who owns what, and what happens to your data."
+          />
+          <div className="mt-12 max-w-3xl">
+            <Faq />
           </div>
         </div>
       </Section>

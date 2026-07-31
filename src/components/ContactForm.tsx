@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { site } from "@/lib/data";
 
@@ -16,14 +16,17 @@ const interests = [
 ];
 
 /**
- * Contact form with inline validation (on blur) and simulated submission.
- * No backend is wired yet — submission opens a pre-filled email as a reliable
- * fallback while always confirming state to the user.
+ * Contact form with inline validation on blur, posting to /api/contact.
+ * A hidden honeypot field and a minimum time-on-form filter out bots. If the
+ * server has no mail provider configured, or delivery fails, the visitor is
+ * handed a pre-filled email instead of losing their message.
  */
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "prepared">("idle");
   const [errors, setErrors] = useState<FieldErrors>({});
+  const [formError, setFormError] = useState<string | null>(null);
   const [interest, setInterest] = useState(interests[0]);
+  const mountedAt = useRef(Date.now());
 
   const validateField = (name: string, value: string): string | undefined => {
     switch (name) {
@@ -49,7 +52,15 @@ export function ContactForm() {
     setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
   };
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const mailtoFor = (v: Record<string, string>) => {
+    const subject = encodeURIComponent(`Engagement inquiry — ${v.organization}`);
+    const body = encodeURIComponent(
+      `Name: ${v.name}\nOrganization: ${v.organization}\nEmail: ${v.email}\nArea of interest: ${interest}\n\n${v.message}`
+    );
+    return `mailto:${site.email}?subject=${subject}&body=${body}`;
+  };
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -66,6 +77,7 @@ export function ContactForm() {
       if (err) nextErrors[k] = err;
     });
     setErrors(nextErrors);
+    setFormError(null);
 
     const firstError = Object.keys(nextErrors)[0];
     if (firstError) {
@@ -74,30 +86,72 @@ export function ContactForm() {
     }
 
     setStatus("submitting");
-    const subject = encodeURIComponent(`Engagement inquiry — ${values.organization}`);
-    const body = encodeURIComponent(
-      `Name: ${values.name}\nOrganization: ${values.organization}\nEmail: ${values.email}\nArea of interest: ${interest}\n\n${values.message}`
-    );
-    window.setTimeout(() => {
-      window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
-      setStatus("sent");
-    }, 600);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...values,
+          interest,
+          website: String(data.get("website") ?? ""),
+          elapsed: Date.now() - mountedAt.current,
+        }),
+      });
+      const payload = await res.json().catch(() => ({}));
+
+      if (res.ok && payload.ok) {
+        setStatus("sent");
+        return;
+      }
+      if (payload.errors) {
+        setErrors(payload.errors);
+        setStatus("idle");
+        return;
+      }
+      if (res.status === 429) {
+        setFormError(payload.error ?? "Too many submissions. Please try again shortly.");
+        setStatus("idle");
+        return;
+      }
+      // Delivery unavailable — hand them a pre-filled email rather than lose it.
+      window.location.href = mailtoFor(values);
+      setStatus("prepared");
+    } catch {
+      window.location.href = mailtoFor(values);
+      setStatus("prepared");
+    }
   };
 
-  if (status === "sent") {
+  if (status === "sent" || status === "prepared") {
+    const prepared = status === "prepared";
     return (
       <div
         role="status"
         className="flex h-full min-h-[420px] flex-col items-start justify-center rounded-lg border border-signal/30 bg-signal/[0.06] p-10"
       >
         <CheckCircle2 className="h-10 w-10 text-signal" aria-hidden="true" />
-        <h3 className="mt-5 font-display text-2xl font-semibold text-ink-strong">Message prepared.</h3>
+        <h3 className="mt-5 font-display text-2xl font-semibold text-ink-strong">
+          {prepared ? "Message prepared." : "Message received."}
+        </h3>
         <p className="mt-3 max-w-md leading-relaxed text-ink-soft">
-          Your email client has opened with the details pre-filled — hit send and it lands with our
-          engagement team. We respond within one business day. Prefer direct?{" "}
-          <a href={`mailto:${site.email}`} className="cursor-pointer font-semibold text-accent-ink hover:underline">
+          {prepared ? (
+            <>
+              Your email client has opened with the details filled in — send it and it reaches our
+              engagement team. Prefer to write directly?{" "}
+            </>
+          ) : (
+            <>
+              It&rsquo;s with our engagement team and a senior person will reply within one business
+              day. If it&rsquo;s urgent, call {site.phones[0]} or write to{" "}
+            </>
+          )}
+          <a
+            href={`mailto:${site.email}`}
+            className="cursor-pointer font-semibold text-accent-ink hover:underline"
+          >
             {site.email}
           </a>
+          .
         </p>
       </div>
     );
@@ -110,6 +164,18 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5">
+      {/* Honeypot — hidden from people, irresistible to bots. */}
+      <div aria-hidden="true" className="absolute h-px w-px overflow-hidden opacity-0">
+        <label htmlFor="website">Leave this field empty</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
+      {formError && (
+        <p role="alert" className="rounded-md border border-red-500/40 bg-red-50 px-4 py-3 text-sm text-red-700">
+          {formError}
+        </p>
+      )}
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-ink-strong">
