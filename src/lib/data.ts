@@ -432,10 +432,10 @@ export const insights: Insight[] = [
 /* ────────────────────────── Home page data ────────────────────────── */
 
 export const heroStats = [
-  { value: 120, suffix: "+", label: "processes transformed" },
-  { value: 38, suffix: "M+", prefix: "$", label: "operating cost eliminated" },
-  { value: 4.2, suffix: "M+", label: "manual hours automated", decimals: 1 },
-  { value: 96, suffix: "%", label: "engagements hitting target metrics" },
+  { value: 3, suffix: "", label: "processes transformed" },
+  { value: 223, prefix: "$", suffix: "K+", label: "operating cost eliminated" },
+  { value: 1.1, suffix: "M+", label: "manual hours automated", decimals: 1 },
+  { value: 54, suffix: "%", label: "engagements hitting target metrics" },
 ];
 
 export const whyEktelio = [

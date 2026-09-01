@@ -156,10 +156,10 @@ export function HeroVisual() {
             className="fill-white/[0.03] stroke-white/[0.07]"
           />
           {[
-            { x: 66, v: "-64%", l: "CYCLE TIME" },
-            { x: 196, v: "+38%", l: "THROUGHPUT" },
-            { x: 336, v: "-52%", l: "COST / TXN" },
-            { x: 452, v: "99.2%", l: "SLA" },
+{ x: 66, v: "-35%", l: "CYCLE TIME" },
+{ x: 196, v: "+25%", l: "THROUGHPUT" },
+{ x: 336, v: "-30%", l: "COST / TXN" },
+{ x: 452, v: "98%", l: "SLA" },
           ].map((m) => (
             <g key={m.l}>
               <text x={m.x} y="372" fontFamily="monospace" fontSize="20" fontWeight="600" className="fill-white">
