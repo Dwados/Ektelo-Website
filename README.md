@@ -104,7 +104,7 @@ Copy [`.env.example`](.env.example) to `.env.local` and configure **one** provid
 ```bash
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
-SMTP_USER=lumuedwardkiko@gmail.com
+SMTP_USER=ssentanmuseth@gmail.com
 SMTP_PASS=your-16-char-app-password   # Google App Password, not your login
 ```
 
