@@ -14,14 +14,14 @@ import {
   sectorsServed,
   serviceGroups,
   services,
-  whyEktelio,
+  whyEktelo,
 } from "@/lib/data";
 import { solutionSegments, solutions } from "@/lib/solutions";
 
 export const metadata: Metadata = {
-  title: "Ektelio — Operational Transformation Company",
+  title: "Ektelo — Operational Transformation Company",
   description:
-    "We digitize operations, not just software. Ektelio finds hidden inefficiencies in governments and enterprises, then eliminates them with AI, automation, engineering, and process redesign.",
+    "We digitize operations, not just software. Ektelo finds hidden inefficiencies in governments and enterprises, then eliminates them with AI, automation, engineering, and process redesign.",
 };
 
 export default function HomePage() {
@@ -44,7 +44,7 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-on-dark">
-                Ektelio finds the hidden inefficiencies inside governments, corporations, and
+                Ektelo finds the hidden inefficiencies inside governments, corporations, and
                 enterprises — then eliminates them with AI, automation, engineering, and process
                 redesign. The product is better operations, measured in numbers your board can read.
               </p>
@@ -59,7 +59,7 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={0.3}>
               <p className="mt-8 font-mono text-xs uppercase tracking-[0.2em] text-on-dark-faint">
-                Ektelio — from the Greek <span className="text-signal">“to execute”</span> · discovery to delivery,
+                Ektelo — from the Greek <span className="text-signal">“to execute”</span> · discovery to delivery,
                 one accountable team
               </p>
             </Reveal>
@@ -117,7 +117,7 @@ export default function HomePage() {
               a shipment, or a shilling actually is.
             </p>
             <p>
-              Ektelio exists to close the gap between what organizations intend and what they execute.
+              Ektelo exists to close the gap between what organizations intend and what they execute.
               We embed with your teams, measure how work really flows, and rebuild the operation —
               process, systems, and cadence — until the numbers move.
             </p>
@@ -271,21 +271,21 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ───────────── 7 · Why Ektelio ───────────── */}
+      {/* ───────────── 7 · Why Ektelo ───────────── */}
       <Section tone="white" className="py-24 sm:py-32">
         <div className="wrap grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
             <SectionHeading
-              eyebrow="Why Ektelio"
+              eyebrow="Why Ektelo"
               title="Consultancies advise. Vendors build. We do both — and stay accountable for the outcome."
-              lead="The market is full of strategy without delivery and delivery without strategy. Ektelio was built to be the missing third thing: an execution partner."
+              lead="The market is full of strategy without delivery and delivery without strategy. Ektelo was built to be the missing third thing: an execution partner."
             />
             <Reveal delay={0.15} className="mt-9">
               <ButtonLink href="/about">How we work</ButtonLink>
             </Reveal>
           </div>
           <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2">
-            {whyEktelio.map((f, i) => (
+            {whyEktelo.map((f, i) => (
               <Reveal key={f.title} delay={i * 0.07}>
                 <div className="group">
                   <div className="flex h-11 w-11 items-center justify-center rounded-md border border-hairline bg-canvas-alt text-ink-strong transition-colors duration-300 group-hover:border-accent/40 group-hover:bg-accent group-hover:text-white">
@@ -308,7 +308,7 @@ export default function HomePage() {
         <div className="wrap relative">
           <SectionHeading
             tone="dark"
-            eyebrow="The Ektelio Method"
+            eyebrow="The Ektelo Method"
             title="Six steps. One accountable line from insight to running operation."
             lead="A disciplined sequence refined across governments and enterprises — each step gated by evidence, not opinion."
           />
@@ -410,7 +410,7 @@ export default function HomePage() {
         <div className="grid-lines-dark absolute inset-0 opacity-60" aria-hidden="true" />
         <div className="wrap relative text-center">
           <Reveal>
-            <p className="eyebrow justify-center text-signal">Engage Ektelio</p>
+            <p className="eyebrow justify-center text-signal">Engage Ektelo</p>
             <h2 className="mx-auto mt-6 max-w-3xl font-display text-display-lg font-semibold text-white">
               Somewhere in your organization, a process is quietly costing you millions.
             </h2>

@@ -3,7 +3,7 @@ import { resolveTheme } from "@/theme/palettes";
 import { site } from "@/lib/data";
 
 export default function manifest(): MetadataRoute.Manifest {
-  const palette = resolveTheme(process.env.EKTELIO_THEME);
+  const palette = resolveTheme(process.env.Ektelo_THEME);
   return {
     name: `${site.name} — Operational Transformation Company`,
     short_name: site.name,

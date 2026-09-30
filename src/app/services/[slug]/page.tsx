@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description: service.summary,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
-      title: `${service.title} · Ektelio`,
+      title: `${service.title} · Ektelo`,
       description: service.summary,
       url: `${site.url}/services/${service.slug}`,
     },
@@ -85,7 +85,7 @@ export default async function ServiceDetailPage({ params }: Params) {
             <Reveal delay={0.08} className="mt-8 max-w-[65ch] space-y-5">
               <p className="text-[1.0625rem] leading-[1.75] text-ink-soft">{service.detail}</p>
               <p className="text-[1.0625rem] leading-[1.75] text-ink-soft">
-                Work under this service follows the same six-step method as every Ektelio engagement.
+                Work under this service follows the same six-step method as every Ektelo engagement.
                 Nothing is built before the operation has been measured, and nothing is signed off
                 until the agreed numbers move.
               </p>

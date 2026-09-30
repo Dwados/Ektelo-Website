@@ -10,7 +10,7 @@ import { site } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Ektelio is small and senior by design. Operators, engineers, and analysts who go inside governments and enterprises and rebuild how the work flows.",
+    "Ektelo is small and senior by design. Operators, engineers, and analysts who go inside governments and enterprises and rebuild how the work flows.",
   alternates: { canonical: "/careers" },
 };
 
@@ -98,7 +98,7 @@ export default function CareersPage() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <ButtonLink href={`mailto:${site.emails[0]}?subject=${encodeURIComponent("Working at Ektelio")}`} size="lg">
+            <ButtonLink href={`mailto:${site.emails[0]}?subject=${encodeURIComponent("Working at Ektelo")}`} size="lg">
               Write to us
             </ButtonLink>
           </Reveal>

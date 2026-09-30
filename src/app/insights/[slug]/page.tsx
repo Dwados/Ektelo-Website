@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     alternates: { canonical: `/insights/${post.slug}` },
     openGraph: {
       type: "article",
-      title: `${post.title} · Ektelio`,
+      title: `${post.title} · Ektelo`,
       description: essay.deck,
       url: `${site.url}/insights/${post.slug}`,
       publishedTime: post.date,
@@ -98,7 +98,7 @@ export default async function InsightPage({ params }: Params) {
 
             <div className="mt-14 border-t border-hairline pt-8">
               <p className="text-sm leading-relaxed text-ink-faint">
-                Written by the Ektelio operations team. Figures in this piece are drawn from
+                Written by the Ektelo operations team. Figures in this piece are drawn from
                 engagements and anonymised; they are illustrative of patterns we see, not claims
                 about a named client.
               </p>

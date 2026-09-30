@@ -10,7 +10,7 @@ import { site } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a conversation with Ektelio. Tell us what should run better — we respond within one business day and sign NDAs before any discovery work.",
+    "Start a conversation with Ektelo. Tell us what should run better — we respond within one business day and sign NDAs before any discovery work.",
 };
 
 const expectations = [

@@ -1,7 +1,7 @@
 /**
  * The operational solutions catalogue.
  *
- * This replaces case studies deliberately: Ektelio is a new firm, so instead of
+ * This replaces case studies deliberately: Ektelo is a new firm, so instead of
  * publishing results it cannot evidence, each solution states the measures the
  * engagement is baselined and held against. Nothing here claims a past client
  * or an achieved outcome.
@@ -18,7 +18,7 @@ export type Solution = {
   title: string;
   oneLiner: string;
   problem: string;
-  /** What Ektelio physically does. */
+  /** What Ektelo physically does. */
   deploy: string[];
   /** The numbers baselined at the start and committed to in writing. */
   measures: { metric: string; commitment: string }[];
@@ -36,7 +36,7 @@ export type SolutionSegmentMeta = {
 };
 
 export const solutionsIntro =
-  "Ektelio is a new firm, and this catalogue is written accordingly. It contains no case studies, no named clients and no achieved results — we have not yet earned the right to publish them, and invented ones would not survive a procurement file or a diligence question. What it contains instead is the commitment: for every solution, the numbers baselined at inception, the target agreed in writing before any build begins, and the threshold that has to hold at handover. Read it as the stronger position. A firm that names the measures it accepts being judged on, before it has your money, is easier to hold to account than one quoting percentages from work you cannot inspect.";
+  "Ektelo is a new firm, and this catalogue is written accordingly. It contains no case studies, no named clients and no achieved results — we have not yet earned the right to publish them, and invented ones would not survive a procurement file or a diligence question. What it contains instead is the commitment: for every solution, the numbers baselined at inception, the target agreed in writing before any build begins, and the threshold that has to hold at handover. Read it as the stronger position. A firm that names the measures it accepts being judged on, before it has your money, is easier to hold to account than one quoting percentages from work you cannot inspect.";
 
 export const solutionSegments: SolutionSegmentMeta[] = [
   {

@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description: industry.summary,
     alternates: { canonical: `/industries/${industry.slug}` },
     openGraph: {
-      title: `${industry.title} · Ektelio`,
+      title: `${industry.title} · Ektelo`,
       description: industry.summary,
       url: `${site.url}/industries/${industry.slug}`,
     },

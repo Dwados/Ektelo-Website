@@ -10,7 +10,7 @@ import { iconForSolution, solutionSegments, solutions, solutionsIntro } from "@/
 export const metadata: Metadata = {
   title: "Operational Solutions",
   description:
-    "What Ektelio delivers for governments, corporations, and small businesses — and the measures each engagement is baselined and held against.",
+    "What Ektelo delivers for governments, corporations, and small businesses — and the measures each engagement is baselined and held against.",
   alternates: { canonical: "/solutions" },
 };
 

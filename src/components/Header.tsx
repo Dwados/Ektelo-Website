@@ -39,7 +39,7 @@ export function Header() {
       }`}
     >
       <div className="wrap flex h-[var(--header-h)] items-center justify-between">
-        <Link href="/" aria-label="Ektelio — home" className="cursor-pointer">
+        <Link href="/" aria-label="Ektelo — home" className="cursor-pointer">
           <Wordmark dark />
         </Link>
 

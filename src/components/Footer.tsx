@@ -20,7 +20,7 @@ export function Footer() {
       <div className="wrap grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.2fr] lg:gap-8">
         {/* Brand */}
         <div className="max-w-sm">
-          <Link href="/" aria-label="Ektelio — home" className="inline-block cursor-pointer">
+          <Link href="/" aria-label="Ektelo — home" className="inline-block cursor-pointer">
             <Wordmark dark />
           </Link>
           <p className="mt-5 text-sm leading-relaxed text-on-dark-soft">
@@ -28,7 +28,7 @@ export function Footer() {
             eliminating hidden inefficiencies across governments, corporations, and enterprises.
           </p>
           <p className="mt-6 font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-on-dark-faint">
-            ektelio · from the Greek <span className="text-signal">“to execute”</span>
+            Ektelo · from the Greek <span className="text-signal">“to execute”</span>
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export function Footer() {
         <div className="wrap flex flex-col gap-4 py-6 text-xs text-on-dark-faint lg:flex-row lg:items-center lg:justify-between">
           <nav aria-label="Legal">
             <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
-              <li>© {new Date().getFullYear()} Ektelio. All rights reserved.</li>
+              <li>© {new Date().getFullYear()} Ektelo. All rights reserved.</li>
               {legal.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="cursor-pointer transition-colors hover:text-white">

@@ -4,7 +4,7 @@ import { TrustPageView } from "@/components/TrustPageView";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description:
-    "The terms governing use of the ektelio.com website. Any engagement with Ektelio is governed by a separate signed agreement.",
+    "The terms governing use of the Ektelo.com website. Any engagement with Ektelo is governed by a separate signed agreement.",
   alternates: { canonical: "/terms" },
 };
 

@@ -638,18 +638,18 @@ export const trustPages: Record<string, TrustPage> = {
   "privacy": {
     "key": "privacy",
     "title": "Privacy Policy",
-    "intro": "This policy explains what personal data ektelio.com collects, why, how long it is kept, and how to act on it. Effective 30 July 2026.",
+    "intro": "This policy explains what personal data Ektelo.com collects, why, how long it is kept, and how to act on it. Effective 30 July 2026.",
     "sections": [
       {
         "heading": "Scope and responsibility",
         "blocks": [
           {
             "type": "p",
-            "text": "Ektelio is an operational transformation company based in Kampala, Uganda. Ektelio determines what this website collects and how it is used, and is the controller of that data under the EU and UK General Data Protection Regulation and under Uganda's Data Protection and Privacy Act 2019."
+            "text": "Ektelo is an operational transformation company based in Kampala, Uganda. Ektelo determines what this website collects and how it is used, and is the controller of that data under the EU and UK General Data Protection Regulation and under Uganda's Data Protection and Privacy Act 2019."
           },
           {
             "type": "p",
-            "text": "This policy covers the public website only. Data handled inside a client engagement is governed by the contract for that engagement. Ektelio has not appointed a named Data Protection Officer; requests go to the contact address below."
+            "text": "This policy covers the public website only. Data handled inside a client engagement is governed by the contract for that engagement. Ektelo has not appointed a named Data Protection Officer; requests go to the contact address below."
           }
         ]
       },
@@ -701,7 +701,7 @@ export const trustPages: Record<string, TrustPage> = {
           },
           {
             "type": "p",
-            "text": "Traffic is encrypted in transit, and access to submissions is limited to Ektelio personnel who need it to reply. A breach affecting your data will be reported to you and the relevant authority where the law requires it."
+            "text": "Traffic is encrypted in transit, and access to submissions is limited to Ektelo personnel who need it to reply. A breach affecting your data will be reported to you and the relevant authority where the law requires it."
           }
         ]
       },
@@ -719,7 +719,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "ektelio.com sets no advertising cookies. It runs no cross-site tracking, no remarketing pixels, no social media trackers, no fingerprinting, and no third-party advertising tags. There is no ad network relationship to disclose because none exists."
+            "text": "Ektelo.com sets no advertising cookies. It runs no cross-site tracking, no remarketing pixels, no social media trackers, no fingerprinting, and no third-party advertising tags. There is no ad network relationship to disclose because none exists."
           },
           {
             "type": "p",
@@ -775,18 +775,18 @@ export const trustPages: Record<string, TrustPage> = {
   "terms": {
     "key": "terms",
     "title": "Terms of Use",
-    "intro": "These terms govern access to and use of the ektelio.com website. They apply to the website alone: they do not create a client relationship and do not govern any engagement with Ektelio, which is always the subject of a separate signed agreement.",
+    "intro": "These terms govern access to and use of the Ektelo.com website. They apply to the website alone: they do not create a client relationship and do not govern any engagement with Ektelo, which is always the subject of a separate signed agreement.",
     "sections": [
       {
         "heading": "Acceptance and Scope",
         "blocks": [
           {
             "type": "p",
-            "text": "By accessing ektelio.com or any document hosted on it, you agree to these terms. If you do not accept them, do not use the site. If you use the site for an organization, you confirm you are authorized to accept these terms on its behalf."
+            "text": "By accessing Ektelo.com or any document hosted on it, you agree to these terms. If you do not accept them, do not use the site. If you use the site for an organization, you confirm you are authorized to accept these terms on its behalf."
           },
           {
             "type": "p",
-            "text": "\"Ektelio\", \"we\", and \"us\" mean the Ektelio business operating from Kampala, Uganda, and remotely. \"You\" means the person or organization using the site. This version takes effect on 30 July 2026 and replaces earlier versions."
+            "text": "\"Ektelo\", \"we\", and \"us\" mean the Ektelo business operating from Kampala, Uganda, and remotely. \"You\" means the person or organization using the site. This version takes effect on 30 July 2026 and replaces earlier versions."
           }
         ]
       },
@@ -799,7 +799,7 @@ export const trustPages: Record<string, TrustPage> = {
           },
           {
             "type": "ul",
-            "text": "republish, sell, or license site content, or include it in a commercial product, without our written permission;\nstate or imply an association with, or endorsement by, Ektelio that does not exist;\ninterfere with the site's operation or security, or attempt unauthorized access to connected systems;\nharvest content or submit data by automated means at a volume that degrades the service."
+            "text": "republish, sell, or license site content, or include it in a commercial product, without our written permission;\nstate or imply an association with, or endorsement by, Ektelo that does not exist;\ninterfere with the site's operation or security, or attempt unauthorized access to connected systems;\nharvest content or submit data by automated means at a volume that degrades the service."
           }
         ]
       },
@@ -808,11 +808,11 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "Site content, including text, design, diagrams, images, code, and downloadable documents, is owned by Ektelio or its licensors and protected by copyright. Use of the site transfers no ownership and grants no licence beyond the internal use described above."
+            "text": "Site content, including text, design, diagrams, images, code, and downloadable documents, is owned by Ektelo or its licensors and protected by copyright. Use of the site transfers no ownership and grants no licence beyond the internal use described above."
           },
           {
             "type": "p",
-            "text": "\"Ektelio\", the Ektelio logo, and the wording used to identify our work are marks used by Ektelio in trade, whether or not registered in any jurisdiction. Their use requires our written consent. Other names and marks belong to their owners and appear for identification only. Permission requests: ssentanmuseth@gmail.com."
+            "text": "\"Ektelo\", the Ektelo logo, and the wording used to identify our work are marks used by Ektelo in trade, whether or not registered in any jurisdiction. Their use requires our written consent. Other names and marks belong to their owners and appear for identification only. Permission requests: ssentanmuseth@gmail.com."
           }
         ]
       },
@@ -821,7 +821,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "The Operational Solutions pages describe what Ektelio does and the measures an engagement would be baselined and held against. They are descriptions of method, not records of completed work, and this site publishes no client case studies. Any timeframe, range, or indicative figure shown is illustrative of the class of work and is not drawn from a specific engagement."
+            "text": "The Operational Solutions pages describe what Ektelo does and the measures an engagement would be baselined and held against. They are descriptions of method, not records of completed work, and this site publishes no client case studies. Any timeframe, range, or indicative figure shown is illustrative of the class of work and is not drawn from a specific engagement."
           },
           {
             "type": "p",
@@ -860,7 +860,7 @@ export const trustPages: Record<string, TrustPage> = {
           },
           {
             "type": "p",
-            "text": "To the fullest extent permitted by the laws of Uganda, Ektelio and its personnel are not liable for loss or damage arising from use of, or reliance on, the site or its content, including loss of profit, revenue, business, goodwill, or data, and any indirect or consequential loss, in contract, tort, or otherwise."
+            "text": "To the fullest extent permitted by the laws of Uganda, Ektelo and its personnel are not liable for loss or damage arising from use of, or reliance on, the site or its content, including loss of profit, revenue, business, goodwill, or data, and any indirect or consequential loss, in contract, tort, or otherwise."
           },
           {
             "type": "p",
@@ -877,7 +877,7 @@ export const trustPages: Record<string, TrustPage> = {
           },
           {
             "type": "p",
-            "text": "Any engagement with Ektelio is governed exclusively by a written agreement signed by both parties, setting out scope, deliverables, timelines, fees, confidentiality, data protection obligations, intellectual property ownership, liability, and termination. Where a signed agreement and these terms differ, the signed agreement governs. Nothing published on the site varies, supplements, or waives it."
+            "text": "Any engagement with Ektelo is governed exclusively by a written agreement signed by both parties, setting out scope, deliverables, timelines, fees, confidentiality, data protection obligations, intellectual property ownership, liability, and termination. Where a signed agreement and these terms differ, the signed agreement governs. Nothing published on the site varies, supplements, or waives it."
           }
         ]
       },
@@ -904,7 +904,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "If a provision is found unenforceable, it is severed and the remainder continues in force. Questions, permission requests, and correction or takedown requests: ssentanmuseth@gmail.com, +256 760 344 344 
+            "text": "If a provision is found unenforceable, it is severed and the remainder continues in force. Questions, permission requests, and correction or takedown requests: ssentanmuseth@gmail.com, +256 760 344 344"
           }
         ]
       }
@@ -913,18 +913,18 @@ export const trustPages: Record<string, TrustPage> = {
   "accessibility": {
     "key": "accessibility",
     "title": "Accessibility Statement",
-    "intro": "This statement applies to the Ektelio website. It records the standard the site is built to, what has been tested, what has not, and how to report a barrier.",
+    "intro": "This statement applies to the Ektelo website. It records the standard the site is built to, what has been tested, what has not, and how to report a barrier.",
     "sections": [
       {
         "heading": "Standard and Scope",
         "blocks": [
           {
             "type": "p",
-            "text": "Ektelio builds this site to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. That is the target for every page, template, and component we control."
+            "text": "Ektelo builds this site to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. That is the target for every page, template, and component we control."
           },
           {
             "type": "p",
-            "text": "The scope of this statement is the HTML, CSS, and scripts served on the Ektelio website and authored by Ektelio. It does not extend to third-party content embedded in those pages, which is addressed under Known Limitations."
+            "text": "The scope of this statement is the HTML, CSS, and scripts served on the Ektelo website and authored by Ektelo. It does not extend to third-party content embedded in those pages, which is addressed under Known Limitations."
           },
           {
             "type": "p",
@@ -1004,7 +1004,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "Write to ssentanmuseth@gmail.com with \"Accessibility\" in the subject line. You can also telephone +256 760 344 344 or +256 778 082 686. Ektelio operates from Kampala, Uganda, and remotely."
+            "text": "Write to ssentanmuseth@gmail.com with \"Accessibility\" in the subject line. You can also telephone +256 760 344 344 or +256 759 139 728. Ektelo operates from Kampala, Uganda, and remotely."
           },
           {
             "type": "p",
@@ -1051,7 +1051,7 @@ export const trustPages: Record<string, TrustPage> = {
   "security": {
     "key": "security",
     "title": "Security and Data Protection",
-    "intro": "Ektelio works inside the operational core of governments, banks, utilities, and hospital groups. This page states the controls we commit to in every engagement, what we will not do with client data, and how to obtain supporting documentation.",
+    "intro": "Ektelo works inside the operational core of governments, banks, utilities, and hospital groups. This page states the controls we commit to in every engagement, what we will not do with client data, and how to obtain supporting documentation.",
     "sections": [
       {
         "heading": "Contractual basis before discovery",
@@ -1130,7 +1130,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "ul",
-            "text": "Everyone assigned to an engagement is bound by written confidentiality obligations that continue after they leave.\nIdentity and background checks are proportionate to the sensitivity of the engagement. Where a client requires specific vetting or clearance, meeting that standard is a condition of assignment.\nWork is performed by Ektelio personnel by default. Any subcontractor is named to the client in advance, engaged only with the client's written consent, and bound by the same obligations. Ektelio remains accountable for their work, and a current sub-processor list is available on request."
+            "text": "Everyone assigned to an engagement is bound by written confidentiality obligations that continue after they leave.\nIdentity and background checks are proportionate to the sensitivity of the engagement. Where a client requires specific vetting or clearance, meeting that standard is a condition of assignment.\nWork is performed by Ektelo personnel by default. Any subcontractor is named to the client in advance, engaged only with the client's written consent, and bound by the same obligations. Ektelo remains accountable for their work, and a current sub-processor list is available on request."
           }
         ]
       },
@@ -1148,7 +1148,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "The control set is designed to map to the ISO 27001 domains relevant to this work: access control, cryptography, operations security, supplier relationships, incident management, and continuity. Ektelio does not hold ISO 27001, SOC 2, or any other certification, and does not represent otherwise. Where an engagement requires formal certification or independent audit, we will state in writing what will be pursued, on what timeline, and at whose cost. We complete client security questionnaires, accept client audit and inspection rights, and adopt the client's security schedule where it is stricter than ours."
+            "text": "The control set is designed to map to the ISO 27001 domains relevant to this work: access control, cryptography, operations security, supplier relationships, incident management, and continuity. Ektelo does not hold ISO 27001, SOC 2, or any other certification, and does not represent otherwise. Where an engagement requires formal certification or independent audit, we will state in writing what will be pursued, on what timeline, and at whose cost. We complete client security questionnaires, accept client audit and inspection rights, and adopt the client's security schedule where it is stricter than ours."
           }
         ]
       },
@@ -1166,7 +1166,7 @@ export const trustPages: Record<string, TrustPage> = {
         "blocks": [
           {
             "type": "p",
-            "text": "Security questionnaires, data processing agreements, sub-processor lists, and control documentation are available on request: ssentanmuseth@gmail.com, +256 760 344 344. Ektelio operates from Kampala, Uganda and works remotely with clients in other jurisdictions. Data protection enquiries use the same channel. Where an engagement requires a named data protection contact, that person is designated in the engagement documentation and identified to the client before processing begins."
+            "text": "Security questionnaires, data processing agreements, sub-processor lists, and control documentation are available on request: ssentanmuseth@gmail.com, +256 760 344 344. Ektelo operates from Kampala, Uganda and works remotely with clients in other jurisdictions. Data protection enquiries use the same channel. Where an engagement requires a named data protection contact, that person is designated in the engagement documentation and identified to the client before processing begins."
           }
         ]
       }
@@ -1223,7 +1223,7 @@ export const careers: {
   howWeWork: string[];
   roles: { title: string; discipline: string; summary: string }[];
 } = {
-  "intro": "Ektelio is small and senior by design. The people we hire go inside national governments, central banks, utilities, hospital groups, and large enterprises, and rebuild how the work actually flows. Your name sits against a number the client already tracks: cycle time, cost per transaction, leakage, throughput.",
+  "intro": "Ektelo is small and senior by design. The people we hire go inside national governments, central banks, utilities, hospital groups, and large enterprises, and rebuild how the work actually flows. Your name sits against a number the client already tracks: cycle time, cost per transaction, leakage, throughput.",
   "whoWeHire": [
     "You have run something real — an operation, a delivery team, a production system — and can describe precisely what broke and what you did about it.",
     "You are comfortable measuring your own work: a baseline, a target, and a number you are willing to be held to in front of the client.",

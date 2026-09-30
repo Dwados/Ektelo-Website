@@ -40,19 +40,19 @@ export function HeroVisual() {
 
         {/* Left: tangled legacy inputs */}
         <g strokeWidth="1.5" className="stroke-on-dark-faint/60">
-          <motion.path d="M40 110 C 90 150, 70 190, 130 210" {...flow(0.2)} />
-          <motion.path d="M40 170 C 100 140, 90 230, 130 230" {...flow(0.35)} />
-          <motion.path d="M40 240 C 80 220, 100 260, 130 250" {...flow(0.5)} />
-          <motion.path d="M40 310 C 110 320, 80 250, 130 270" {...flow(0.65)} />
-          <motion.path d="M40 370 C 100 380, 110 300, 130 290" {...flow(0.8)} />
+          <motion.path d="M40 92 C 85 125, 75 190, 130 205" {...flow(0.2)} />
+          <motion.path d="M40 142 C 95 130, 85 210, 130 225" {...flow(0.35)} />
+          <motion.path d="M40 192 C 80 185, 95 240, 130 245" {...flow(0.5)} />
+          <motion.path d="M40 242 C 105 250, 85 255, 130 265" {...flow(0.65)} />
+          <motion.path d="M40 292 C 90 300, 100 280, 130 285" {...flow(0.8)} />
         </g>
         {["Paper", "Email", "Silos", "Rework", "Delay"].map((t, i) => (
           <text
             key={t}
             x="38"
-            y={104 + i * 66}
+            y={86 + i * 50}
             fontFamily="monospace"
-            fontSize="10.5"
+            fontSize="10"
             letterSpacing="1.5"
             className="fill-on-dark-faint"
           >
@@ -60,7 +60,7 @@ export function HeroVisual() {
           </text>
         ))}
 
-        {/* Center: the Ektelio engine */}
+        {/* Center: the Ektelo engine */}
         <g>
           <rect
             x="150"
@@ -73,7 +73,7 @@ export function HeroVisual() {
           />
           <rect x="150" y="180" width="150" height="120" rx="12" fill="url(#engineGlow)" />
           <text x="176" y="228" fontFamily="monospace" fontSize="11" letterSpacing="2" className="fill-accent-soft">
-            EKTELIO
+            Ektelo
           </text>
           <text x="176" y="248" fontFamily="monospace" fontSize="11" letterSpacing="2" className="fill-white">
             ENGINE

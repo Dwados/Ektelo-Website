@@ -7,7 +7,7 @@ export const contentType = "image/png";
 
 /** Home-screen icon — the three execution bars, drawn from the active palette. */
 export default function AppleIcon() {
-  const c = resolveTheme(process.env.EKTELIO_THEME).colors;
+  const c = resolveTheme(process.env.Ektelo_THEME).colors;
   const bar = (width: number) => (
     <div style={{ width, height: 16, borderRadius: 8, background: "#fff", display: "flex" }} />
   );

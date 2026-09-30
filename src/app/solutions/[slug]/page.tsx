@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description: sol.oneLiner,
     alternates: { canonical: `/solutions/${sol.slug}` },
     openGraph: {
-      title: `${sol.title} · Ektelio`,
+      title: `${sol.title} · Ektelo`,
       description: sol.oneLiner,
       url: `${site.url}/solutions/${sol.slug}`,
     },

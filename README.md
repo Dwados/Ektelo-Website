@@ -1,9 +1,9 @@
-# Ektelio — Operational Transformation Company
+# Ektelo — Operational Transformation Company
 
-> **ektelio** — *“to execute.”*
+> **Ektelo** — *“to execute.”*
 > We digitize operations, not just software.
 
-Premium enterprise marketing website for Ektelio, an operational transformation
+Premium enterprise marketing website for Ektelo, an operational transformation
 company serving governments, corporations, and enterprises. Positioned alongside
 Palantir / IBM Consulting / McKinsey Digital — but AI-native and execution-focused.
 
@@ -38,7 +38,7 @@ Semantic tokens (Tailwind class → meaning):
 
 ### The house palette
 
-**`ektelio` — Ektelio Standard** is the shipping palette (`DEFAULT_THEME`).
+**`Ektelo` — Ektelo Standard** is the shipping palette (`DEFAULT_THEME`).
 Petrol-ink surfaces machined to near-black (hue 202, between navy and petrol),
 a blue cooled to #1474C8 so white labels hold 4.85:1, and brass #E2B865 marking
 proven results. It is a three-way merge of Signal Navy, Sovereign Petrol and
@@ -50,8 +50,8 @@ or deleted: `signature` (Signal Navy), `graphite` (Graphite Ember), `meridian`
 `chancery` (Chancery Bronze), `bluedsteel` (Blued Steel).
 
 ```bash
-EKTELIO_THEME=sovereign npm run dev      # preview another palette
-EKTELIO_THEME=sovereign npm run build    # builds into .next-sovereign
+Ektelo_THEME=sovereign npm run dev      # preview another palette
+Ektelo_THEME=sovereign npm run build    # builds into .next-sovereign
 ```
 
 Every palette is contrast-audited: all load-bearing text pairs clear WCAG AA
@@ -108,15 +108,15 @@ SMTP_USER=ssentanmuseth@gmail.com
 SMTP_PASS=your-16-char-app-password   # Google App Password, not your login
 ```
 
-**Resend** — preferred once `ektelio.com` is registered:
+**Resend** — preferred once `Ektelo.com` is registered:
 
 ```bash
 RESEND_API_KEY=re_xxx
-CONTACT_FROM="Ektelio Website <engage@ektelio.com>"
+CONTACT_FROM="Ektelo Website <engage@Ektelo.com>"
 ```
 
 > Resend only delivers to the address its account was created with until you
-> verify a sending domain. Add `ektelio.com` under Domains, publish the SPF and
+> verify a sending domain. Add `Ektelo.com` under Domains, publish the SPF and
 > DKIM records, and set `CONTACT_FROM` to an address on it — otherwise only one
 > of the two contact addresses will ever receive anything.
 
@@ -126,7 +126,7 @@ Check what a running deployment actually picked up — it reports the provider a
 recipient count, never a credential:
 
 ```bash
-curl https://ektelio.com/api/contact
+curl https://Ektelo.com/api/contact
 # {"provider":"smtp","configured":true,"recipients":2,...}
 ```
 

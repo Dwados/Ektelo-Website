@@ -47,8 +47,8 @@ function senderFor(provider: MailProvider): string {
   if (process.env.CONTACT_FROM) return process.env.CONTACT_FROM;
   // Resend's shared sender works without a verified domain, but only delivers
   // to the address the Resend account was created with.
-  if (provider === "resend") return "Ektelio Website <onboarding@resend.dev>";
-  return `Ektelio Website <${process.env.SMTP_USER}>`;
+  if (provider === "resend") return "Ektelo Website <onboarding@resend.dev>";
+  return `Ektelo Website <${process.env.SMTP_USER}>`;
 }
 
 function subjectFor(s: Submission) {

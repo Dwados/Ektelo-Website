@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { resolveTheme } from "@/theme/palettes";
 
 export const runtime = "nodejs";
-export const alt = "Ektelio — We digitize operations, not just software.";
+export const alt = "Ektelo — We digitize operations, not just software.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -11,7 +11,7 @@ export const contentType = "image/png";
  * the site. Rendered at build time into a static PNG.
  */
 export default async function OpengraphImage() {
-  const c = resolveTheme(process.env.EKTELIO_THEME).colors;
+  const c = resolveTheme(process.env.Ektelo_THEME).colors;
 
   return new ImageResponse(
     (
@@ -59,7 +59,7 @@ export default async function OpengraphImage() {
             <div style={{ width: 18, height: 5, borderRadius: 3, background: "#fff", display: "flex" }} />
             <div style={{ width: 28, height: 5, borderRadius: 3, background: "#fff", display: "flex" }} />
           </div>
-          <div style={{ fontSize: 40, fontWeight: 700, color: "#fff", letterSpacing: -1 }}>ektelio</div>
+          <div style={{ fontSize: 40, fontWeight: 700, color: "#fff", letterSpacing: -1 }}>Ektelo</div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -103,7 +103,7 @@ export default async function OpengraphImage() {
           }}
         >
           <span>Governments · Enterprises · Corporations</span>
-          <span style={{ color: c.signal, letterSpacing: 3 }}>EKTELIO.COM</span>
+          <span style={{ color: c.signal, letterSpacing: 3 }}>Ektelo.COM</span>
         </div>
       </div>
     ),
