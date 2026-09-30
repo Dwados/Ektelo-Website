@@ -5,11 +5,20 @@
 export function LogoMark({ className = "h-8 w-8" }: { className?: string }) {
   return (
     <svg viewBox="0 0 40 40" fill="none" aria-hidden="true" className={className}>
-      <rect x="1" y="1" width="38" height="38" rx="8" className="fill-accent" />
-      <path d="M11 13h18" stroke="white" strokeWidth="3.2" strokeLinecap="round" />
-      <path d="M11 20h12" stroke="white" strokeWidth="3.2" strokeLinecap="round" />
-      <path d="M11 27h18" stroke="white" strokeWidth="3.2" strokeLinecap="round" />
-      <circle cx="29" cy="20" r="2.4" className="fill-signal" />
+      <rect
+        x="1.5"
+        y="1.5"
+        width="37"
+        height="37"
+        rx="8.5"
+        fill="#0b1b2f"
+        stroke="#1e3a5f"
+        strokeWidth="1.2"
+      />
+      <rect x="8.5" y="10.5" width="18" height="3.5" rx="1.75" fill="#E2E8F0" />
+      <rect x="8.5" y="18.25" width="12.5" height="3.5" rx="1.75" fill="#38BDF8" />
+      <circle cx="27" cy="20" r="2.25" className="fill-signal" />
+      <rect x="8.5" y="26" width="18" height="3.5" rx="1.75" fill="#E2E8F0" />
     </svg>
   );
 }
